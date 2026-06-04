@@ -1,2 +1,10 @@
-node_modules/\npackage-lock.json\n.next/\n*.pyc\n__pycache__/\n.env.local\n.env\n
+node_modules/
 package-lock.json
+.next/
+*.pyc
+__pycache__/
+.env.local
+.env
+dist/
+build/
+*.egg-info/
