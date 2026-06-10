@@ -293,12 +293,12 @@ export const MOCK_RECOMMENDATIONS: AIRecommendation[] = [
 ];
 
 export const MOCK_CONTRIBUTIONS: Contribution[] = [
-  { id: 'c-001', memberId: 'm-001', amount: 5, currency: 'USD', date: '2024-11-01', method: 'Mobile Money', status: 'Confirmed', receiptNumber: 'CDP-2024-11-001' },
-  { id: 'c-002', memberId: 'm-001', amount: 5, currency: 'USD', date: '2024-10-01', method: 'Mobile Money', status: 'Confirmed', receiptNumber: 'CDP-2024-10-001' },
-  { id: 'c-003', memberId: 'm-002', amount: 5, currency: 'USD', date: '2024-11-01', method: 'Bank Transfer', status: 'Confirmed', receiptNumber: 'CDP-2024-11-002' },
-  { id: 'c-004', memberId: 'm-003', amount: 5, currency: 'USD', date: '2024-11-05', method: 'Mobile Money', status: 'Confirmed', receiptNumber: 'CDP-2024-11-003' },
-  { id: 'c-005', memberId: 'm-004', amount: 5, currency: 'USD', date: '2024-10-15', method: 'Cash', status: 'Confirmed', receiptNumber: 'CDP-2024-10-004' },
-  { id: 'c-006', memberId: 'm-005', amount: 5, currency: 'USD', date: '2024-11-10', method: 'Online', status: 'Confirmed', receiptNumber: 'CDP-2024-11-005' },
+  { id: 'c-001', memberId: 'm-001', amount: 1, currency: 'USD', date: '2024-11-01', method: 'Mobile Money', status: 'Confirmed', receiptNumber: 'CDP-2024-11-001' },
+  { id: 'c-002', memberId: 'm-001', amount: 1, currency: 'USD', date: '2024-10-01', method: 'Mobile Money', status: 'Confirmed', receiptNumber: 'CDP-2024-10-001' },
+  { id: 'c-003', memberId: 'm-002', amount: 1, currency: 'USD', date: '2024-11-01', method: 'Bank Transfer', status: 'Confirmed', receiptNumber: 'CDP-2024-11-002' },
+  { id: 'c-004', memberId: 'm-003', amount: 1, currency: 'USD', date: '2024-11-05', method: 'Mobile Money', status: 'Confirmed', receiptNumber: 'CDP-2024-11-003' },
+  { id: 'c-005', memberId: 'm-004', amount: 1, currency: 'USD', date: '2024-10-15', method: 'Cash', status: 'Confirmed', receiptNumber: 'CDP-2024-10-004' },
+  { id: 'c-006', memberId: 'm-005', amount: 1, currency: 'USD', date: '2024-11-10', method: 'Online', status: 'Confirmed', receiptNumber: 'CDP-2024-11-005' },
 ];
 
 export const MOCK_TRAINING_MODULES: TrainingModule[] = [

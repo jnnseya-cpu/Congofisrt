@@ -153,7 +153,7 @@ export default function RegisterPage() {
           <div className="bg-blue-50 border border-green-200 rounded-xl p-4 mb-6 text-left">
             <h4 className="font-semibold text-drc-blue mb-2">Prochaines étapes :</h4>
             <ul className="space-y-1 text-sm text-gray-700">
-              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Configurer votre premier paiement de $5 USD</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Configurer votre premier paiement de $1 USD</li>
               <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Accéder à l'Académie Politique CDP</li>
               <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Rejoindre votre cellule locale</li>
               <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Consulter le tableau de bord de votre province</li>
@@ -471,9 +471,9 @@ export default function RegisterPage() {
                     <DollarSign className="w-6 h-6 text-drc-yellow" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-drc-blue text-lg">$5 USD / mois</h3>
+                    <h3 className="font-bold text-drc-blue text-lg">$1 USD / mois</h3>
                     <p className="text-gray-700 text-sm mt-1">
-                      La cotisation mensuelle de $5 USD garantit votre statut de membre actif et votre éligibilité
+                      La cotisation mensuelle de $1 USD garantit votre statut de membre actif et votre éligibilité
                       à toutes les processus de sélection du parti.
                     </p>
                     <div className="mt-3 grid grid-cols-2 gap-2">
@@ -535,7 +535,7 @@ export default function RegisterPage() {
                   className="mt-0.5 text-drc-blue"
                 />
                 <span className="text-sm text-gray-700">
-                  J'accepte les conditions d'adhésion au parti Le Congo D'Abord, je comprends l'obligation de cotisation mensuelle de $5 USD
+                  J'accepte les conditions d'adhésion au parti Le Congo D'Abord, je comprends l'obligation de cotisation mensuelle de $1 USD
                   et je m'engage à respecter la Charte d'éthique et d'intégrité du parti.
                 </span>
               </label>

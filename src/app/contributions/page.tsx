@@ -70,7 +70,7 @@ export default function ContributionsPage() {
               </div>
               <h1 className="text-2xl md:text-3xl font-black text-gray-900">Gestion des Cotisations</h1>
               <p className="text-gray-500 text-sm mt-1">
-                Cotisation mensuelle : <strong className="text-drc-blue">5 USD / membre / mois</strong>
+                Cotisation mensuelle : <strong className="text-drc-blue">1 USD / membre / mois</strong>
               </p>
             </div>
             <button className="hidden md:flex items-center gap-2 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition-all">

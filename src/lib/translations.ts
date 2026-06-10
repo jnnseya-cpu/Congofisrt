@@ -88,7 +88,7 @@ export const translations: AllTranslations = {
     'register.prevParty': 'Ancien parti (optionnel)',
     'register.civicOrgs': 'Organisations civiques',
     'register.languages': 'Langues parlées',
-    'register.contribution': 'Cotisation mensuelle ($5/mois)',
+    'register.contribution': 'Cotisation mensuelle ($1/mois)',
     'register.submit': "S'inscrire maintenant",
     'register.success': 'Inscription réussie ! Bienvenue dans Congo D\'Abord.',
 
@@ -274,7 +274,7 @@ export const translations: AllTranslations = {
     'register.prevParty': 'Parti ya kala (soki ozali)',
     'register.civicOrgs': 'Bozangi ya bato',
     'register.languages': 'Minoko ozali koloba',
-    'register.contribution': 'Makabo ya sanza ($5/sanza)',
+    'register.contribution': 'Makabo ya sanza ($1/sanza)',
     'register.submit': 'Kotiyama sikoyo',
     'register.success': 'Kotiyama esalisami! Boyei malamu na Congo D\'Abord.',
 
@@ -385,7 +385,7 @@ export const translations: AllTranslations = {
     'register.prevParty': 'Parti ya kale (soki evo)',
     'register.civicOrgs': 'Ntumba ya bantu',
     'register.languages': 'Minoko ya kubonga',
-    'register.contribution': 'Mpila ya sanza ($5/sanza)',
+    'register.contribution': 'Mpila ya sanza ($1/sanza)',
     'register.submit': 'Lemba sikoyo',
     'register.success': 'Kulemba kwatoka malamu! Nsanyuka na Congo D\'Abord.',
 
@@ -496,7 +496,7 @@ export const translations: AllTranslations = {
     'register.prevParty': 'Paati wa kale (soki evo)',
     'register.civicOrgs': 'Bidimu bya bantu',
     'register.languages': 'Minoko ya kuamba',
-    'register.contribution': 'Malu a kulombola ya luna ($5/luna)',
+    'register.contribution': 'Malu a kulombola ya luna ($1/luna)',
     'register.submit': 'Longolola sikabu',
     'register.success': 'Kulongolola kwafula malamu! Mwela malamu na Congo D\'Abord.',
 
@@ -607,7 +607,7 @@ export const translations: AllTranslations = {
     'register.prevParty': 'Chama cha zamani (kama kipo)',
     'register.civicOrgs': 'Mashirika ya kiraia',
     'register.languages': 'Lugha zinazozungumzwa',
-    'register.contribution': 'Ada ya mwanachama ($5/mwezi)',
+    'register.contribution': 'Ada ya mwanachama ($1/mwezi)',
     'register.submit': 'Jisajili sasa',
     'register.success': 'Usajili umekamilika! Karibu Congo D\'Abord.',
 

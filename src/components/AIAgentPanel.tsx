@@ -162,7 +162,7 @@ function getDemoResponse(agentName: string, question: string): string {
   }
 
   if (q.includes('cotisation') || q.includes('paiement') || q.includes('5 usd')) {
-    return `La cotisation mensuelle obligatoire est de **5 USD par mois**.\n\nRègle stricte : aucun membre avec une cotisation non à jour ne peut être éligible pour :\n• Une nomination interne\n• Un rôle de leadership\n• La liste des candidats aux élections\n• Les pools ministériels ou nationaux\n\nStatuts possibles : Actif ✓ | Période de grâce ⏳ | Suspendu ✗ | Inéligible ✗ | Exempté (décision officielle)`;
+    return `La cotisation mensuelle obligatoire est de **1 USD par mois**.\n\nRègle stricte : aucun membre avec une cotisation non à jour ne peut être éligible pour :\n• Une nomination interne\n• Un rôle de leadership\n• La liste des candidats aux élections\n• Les pools ministériels ou nationaux\n\nStatuts possibles : Actif ✓ | Période de grâce ⏳ | Suspendu ✗ | Inéligible ✗ | Exempté (décision officielle)`;
   }
 
   if (q.includes('province') || q.includes('territoire') || q.includes('structure')) {

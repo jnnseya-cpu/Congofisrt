@@ -19,7 +19,7 @@ Le parti est fondé par Mr Justin Nseya, Président et Fondateur. Il est le prem
 Contexte du parti:
 - 26 provinces couvertes
 - ~35,000 membres inscrits
-- Cotisation mensuelle obligatoire: $5 USD
+- Cotisation mensuelle obligatoire: $1 USD
 - 12 agents IA spécialisés
 - Formule de scoring candidats: Education (15%) + Expérience (20%) + Crédibilité locale (15%) + Leadership (15%) + Cotisation (10%) + Formation (10%) + Intégrité (10%) + Langue (5%)
 - Règle inviolable: Sans cotisation à jour = pas d'éligibilité à la sélection

@@ -26,7 +26,7 @@ const AI_AGENTS = [
   { icon: Award, title: "Matching des rôles", desc: "Associe les membres aux postes selon leurs compétences.", color: "bg-orange-100 text-orange-700" },
   { icon: BookOpen, title: "Intelligence politique", desc: "Génère politiques, manifestes et plans provinciaux.", color: "bg-indigo-100 text-indigo-700" },
   { icon: Globe, title: "Intelligence infrastructure", desc: "Cartographie les besoins locaux en routes, eau, énergie.", color: "bg-teal-100 text-teal-700" },
-  { icon: TrendingUp, title: "Finance & Cotisations", desc: "Suivi transparent des 5 USD/mois par membre.", color: "bg-emerald-100 text-emerald-700" },
+  { icon: TrendingUp, title: "Finance & Cotisations", desc: "Suivi transparent des 1 USD/mois par membre.", color: "bg-emerald-100 text-emerald-700" },
   { icon: BookOpen, title: "Académie politique", desc: "14 modules de formation pour les futurs leaders.", color: "bg-pink-100 text-pink-700" },
   { icon: Shield, title: "Éthique & Discipline", desc: "Protège l'intégrité du parti contre la corruption.", color: "bg-red-100 text-red-700" },
   { icon: Zap, title: "Communication IA", desc: "Discours, communiqués et messages en 5 langues.", color: "bg-amber-100 text-amber-700" },
@@ -286,7 +286,7 @@ export default function LandingPage() {
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             Rejoignez la révolution politique du Congo
           </h2>
-          <p className="text-gray-600 mb-2">Cotisation mensuelle : <strong>5 USD / mois</strong></p>
+          <p className="text-gray-600 mb-2">Cotisation mensuelle : <strong>1 USD / mois</strong></p>
           <p className="text-gray-500 text-sm mb-8">
             Votre cotisation vous ouvre l&apos;accès à la sélection interne, aux nominations,
             aux formations et à la construction d&apos;un Congo meilleur.
