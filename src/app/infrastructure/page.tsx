@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Map, AlertTriangle, Zap, Droplets, Road, Heart, BookOpen, Wifi, Leaf, Brain } from 'lucide-react';
+import { Map, AlertTriangle, Zap, Droplets, Navigation, Heart, BookOpen, Wifi, Leaf, Brain } from 'lucide-react';
 import AIAgentPanel from '@/components/AIAgentPanel';
 import { MOCK_INFRASTRUCTURE_NEEDS } from '@/lib/mockData';
 import type { InfrastructureNeed } from '@/lib/types';
@@ -9,7 +9,7 @@ import type { InfrastructureNeed } from '@/lib/types';
 const CATEGORY_ICONS: Record<InfrastructureNeed['category'], React.FC<{className?: string}>> = {
   'Water': Droplets,
   'Electricity': Zap,
-  'Roads': Map,
+  'Roads': Navigation,
   'Healthcare': Heart,
   'Education': BookOpen,
   'Internet': Wifi,

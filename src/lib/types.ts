@@ -1,7 +1,8 @@
 // CDP-AI OS — TypeScript types
 
 // Re-export Language from translations to avoid duplication
-export type { Language } from './translations';
+import type { Language } from './translations';
+export type { Language };
 
 export type Gender = 'M' | 'F' | 'Other';
 

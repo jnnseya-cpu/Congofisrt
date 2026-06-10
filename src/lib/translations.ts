@@ -652,8 +652,6 @@ export const translations: AllTranslations = {
   },
 };
 
-export type Language = 'fr' | 'ln' | 'kg' | 'ts' | 'sw';
-
 export const LANGUAGE_NAMES: Record<Language, string> = {
   fr: 'Français',
   ln: 'Lingala',
