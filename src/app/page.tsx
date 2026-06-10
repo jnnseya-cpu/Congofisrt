@@ -55,12 +55,34 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen">
       {/* ===== HERO ===== */}
-      <section className="hero-gradient text-white relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-64 h-64 border border-white rounded-full" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 border border-white rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white rounded-full" />
+      <section className="text-white relative overflow-hidden" style={{background: '#007FFF'}}>
+        {/* DRC FLAG BACKGROUND */}
+        <div className="absolute inset-0" style={{
+          background: '#007FFF',
+        }}>
+          {/* Red diagonal stripe with yellow borders — actual DRC flag */}
+          <div className="absolute inset-0" style={{
+            background: `
+              linear-gradient(
+                -55deg,
+                transparent 0%,
+                transparent calc(50% - 80px),
+                #FCD116 calc(50% - 80px),
+                #FCD116 calc(50% - 65px),
+                #CE1126 calc(50% - 65px),
+                #CE1126 calc(50% + 65px),
+                #FCD116 calc(50% + 65px),
+                #FCD116 calc(50% + 80px),
+                transparent calc(50% + 80px),
+                transparent 100%
+              )
+            `,
+            opacity: 0.9,
+          }} />
+          {/* Yellow star top-left */}
+          <div className="absolute top-8 left-8 text-drc-yellow" style={{fontSize: '4rem', lineHeight: 1, opacity: 0.9}}>★</div>
+          {/* Subtle overlay for text readability */}
+          <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(0,85,204,0.55) 0%, rgba(0,0,80,0.35) 100%)'}} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 py-20 md:py-28 relative z-10">
