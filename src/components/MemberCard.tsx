@@ -15,8 +15,8 @@ export default function MemberCard({ member, compact = false, onView }: MemberCa
 
   if (compact) {
     return (
-      <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-green-50 transition-colors cursor-pointer" onClick={() => onView?.(member)}>
-        <div className="w-10 h-10 rounded-full bg-drc-green text-white flex items-center justify-center font-bold text-sm shrink-0">
+      <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors cursor-pointer" onClick={() => onView?.(member)}>
+        <div className="w-10 h-10 rounded-full bg-drc-blue text-white flex items-center justify-center font-bold text-sm shrink-0">
           {initials}
         </div>
         <div className="flex-1 min-w-0">
@@ -31,13 +31,13 @@ export default function MemberCard({ member, compact = false, onView }: MemberCa
   return (
     <div className="card-hover overflow-hidden">
       {/* Header */}
-      <div className="bg-gradient-to-br from-drc-green to-drc-green-dark p-4 -m-6 mb-4 flex items-center gap-4">
-        <div className="w-14 h-14 rounded-full bg-drc-yellow text-drc-green-dark flex items-center justify-center font-black text-xl shrink-0 shadow-md">
+      <div className="bg-gradient-to-br from-drc-blue to-drc-blue-dark p-4 -m-6 mb-4 flex items-center gap-4">
+        <div className="w-14 h-14 rounded-full bg-drc-yellow text-drc-blue-dark flex items-center justify-center font-black text-xl shrink-0 shadow-md">
           {initials}
         </div>
         <div>
           <h3 className="font-bold text-white text-lg leading-tight">{member.firstName} {member.lastName}</h3>
-          <p className="text-green-200 text-sm">{member.role}</p>
+          <p className="text-blue-200 text-sm">{member.role}</p>
           <ContributionBadge status={member.contributionStatus} size="sm" />
         </div>
       </div>
@@ -45,28 +45,28 @@ export default function MemberCard({ member, compact = false, onView }: MemberCa
       {/* Details */}
       <div className="space-y-2 mt-4">
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <MapPin className="w-4 h-4 text-drc-green shrink-0" />
+          <MapPin className="w-4 h-4 text-drc-blue shrink-0" />
           <span className="truncate">
             {[member.location.commune, member.location.territory, member.location.province].filter(Boolean).join(', ') || member.location.country}
           </span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Briefcase className="w-4 h-4 text-drc-green shrink-0" />
+          <Briefcase className="w-4 h-4 text-drc-blue shrink-0" />
           <span className="truncate">{member.work.jobTitle || 'Non renseigné'}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <BookOpen className="w-4 h-4 text-drc-green shrink-0" />
+          <BookOpen className="w-4 h-4 text-drc-blue shrink-0" />
           <span>{member.education.level} {member.education.field ? `— ${member.education.field}` : ''}</span>
         </div>
         {member.email && (
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Mail className="w-4 h-4 text-drc-green shrink-0" />
+            <Mail className="w-4 h-4 text-drc-blue shrink-0" />
             <span className="truncate">{member.email}</span>
           </div>
         )}
         {member.phone && (
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Phone className="w-4 h-4 text-drc-green shrink-0" />
+            <Phone className="w-4 h-4 text-drc-blue shrink-0" />
             <span>{member.phone}</span>
           </div>
         )}
@@ -81,7 +81,7 @@ export default function MemberCard({ member, compact = false, onView }: MemberCa
         {onView && (
           <button
             onClick={() => onView(member)}
-            className="text-xs text-drc-green font-semibold hover:underline"
+            className="text-xs text-drc-blue font-semibold hover:underline"
           >
             Voir le profil →
           </button>

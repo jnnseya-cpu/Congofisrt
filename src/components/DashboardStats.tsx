@@ -34,8 +34,8 @@ export default function DashboardStats({ stats }: DashboardStatsProps) {
       value: stats.totalMembers.toLocaleString(),
       sub: `dont ${stats.diasporaMembers.toLocaleString()} diaspora`,
       icon: Users,
-      color: 'text-drc-green',
-      bg: 'bg-green-50',
+      color: 'text-drc-blue',
+      bg: 'bg-blue-50',
       trend: '+12% ce mois',
     },
     {
@@ -75,8 +75,8 @@ export default function DashboardStats({ stats }: DashboardStatsProps) {
       value: `${stats.electionReadiness}%`,
       sub: 'préparation nationale',
       icon: Shield,
-      color: 'text-drc-green',
-      bg: 'bg-green-50',
+      color: 'text-drc-blue',
+      bg: 'bg-blue-50',
     },
     {
       label: 'Taux de formation',

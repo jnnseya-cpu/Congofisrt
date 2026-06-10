@@ -35,11 +35,11 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-drc-green rounded-lg flex items-center justify-center shadow">
+            <div className="w-9 h-9 bg-drc-blue rounded-lg flex items-center justify-center shadow">
               <Shield className="w-5 h-5 text-drc-yellow" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-black text-drc-green text-lg leading-none block">Congo D&apos;Abord</span>
+              <span className="font-black text-drc-blue text-lg leading-none block">Congo D&apos;Abord</span>
               <span className="text-xs text-gray-500 font-medium leading-none">CDP-AI OS</span>
             </div>
           </Link>

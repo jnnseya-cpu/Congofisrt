@@ -82,13 +82,13 @@ export default function AIAgentPanel({
   return (
     <div className="flex flex-col h-[500px] bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       {/* Header */}
-      <div className="bg-drc-green px-4 py-3 flex items-center gap-3">
+      <div className="bg-drc-blue px-4 py-3 flex items-center gap-3">
         <div className="w-8 h-8 bg-drc-yellow rounded-full flex items-center justify-center">
-          <Bot className="w-4 h-4 text-drc-green-dark" />
+          <Bot className="w-4 h-4 text-drc-blue-dark" />
         </div>
         <div>
           <h3 className="text-white font-bold text-sm">{agentName}</h3>
-          <p className="text-green-200 text-xs">{agentDescription}</p>
+          <p className="text-blue-200 text-xs">{agentDescription}</p>
         </div>
         <div className="ml-auto flex items-center gap-1">
           <Sparkles className="w-3 h-3 text-drc-yellow" />
@@ -101,20 +101,20 @@ export default function AIAgentPanel({
         {messages.map((msg, i) => (
           <div key={i} className={`flex gap-2 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
             <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${
-              msg.role === 'user' ? 'bg-drc-green' : 'bg-drc-yellow'
+              msg.role === 'user' ? 'bg-drc-blue' : 'bg-drc-yellow'
             }`}>
               {msg.role === 'user'
                 ? <User className="w-4 h-4 text-white" />
-                : <Bot className="w-4 h-4 text-drc-green-dark" />
+                : <Bot className="w-4 h-4 text-drc-blue-dark" />
               }
             </div>
             <div className={`max-w-[80%] rounded-xl px-4 py-2.5 text-sm ${
               msg.role === 'user'
-                ? 'bg-drc-green text-white rounded-tr-none'
+                ? 'bg-drc-blue text-white rounded-tr-none'
                 : 'bg-gray-100 text-gray-800 rounded-tl-none'
             }`}>
               <p className="leading-relaxed whitespace-pre-wrap">{msg.content}</p>
-              <p className={`text-xs mt-1 ${msg.role === 'user' ? 'text-green-200' : 'text-gray-400'}`}>
+              <p className={`text-xs mt-1 ${msg.role === 'user' ? 'text-blue-200' : 'text-gray-400'}`}>
                 {msg.timestamp.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
               </p>
             </div>
@@ -123,10 +123,10 @@ export default function AIAgentPanel({
         {loading && (
           <div className="flex gap-2">
             <div className="w-7 h-7 rounded-full bg-drc-yellow flex items-center justify-center">
-              <Bot className="w-4 h-4 text-drc-green-dark" />
+              <Bot className="w-4 h-4 text-drc-blue-dark" />
             </div>
             <div className="bg-gray-100 rounded-xl rounded-tl-none px-4 py-3">
-              <Loader2 className="w-4 h-4 text-drc-green animate-spin" />
+              <Loader2 className="w-4 h-4 text-drc-blue animate-spin" />
             </div>
           </div>
         )}
@@ -140,12 +140,12 @@ export default function AIAgentPanel({
           onKeyDown={handleKeyDown}
           placeholder={placeholderText}
           rows={1}
-          className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-drc-green focus:border-transparent"
+          className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-drc-blue focus:border-transparent"
         />
         <button
           onClick={sendMessage}
           disabled={!input.trim() || loading}
-          className="bg-drc-green text-white p-2 rounded-lg hover:bg-drc-green-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-drc-blue text-white p-2 rounded-lg hover:bg-drc-blue-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Send className="w-4 h-4" />
         </button>

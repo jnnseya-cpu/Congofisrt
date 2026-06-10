@@ -24,19 +24,19 @@ export default function ProvinceMap({ selectedProvince, onSelectProvince, compac
             <div
               key={province.id}
               className={`flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all ${
-                isSelected ? 'bg-green-50 border border-drc-green' : 'hover:bg-gray-50 border border-transparent'
+                isSelected ? 'bg-blue-50 border border-drc-blue' : 'hover:bg-gray-50 border border-transparent'
               }`}
               onClick={() => onSelectProvince?.(province)}
             >
-              <MapPin className="w-3.5 h-3.5 text-drc-green shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-drc-blue shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-xs font-medium text-gray-700 truncate">{province.name}</span>
-                  <span className="text-xs font-bold text-drc-green ml-2">{(province.memberCount || 0).toLocaleString()}</span>
+                  <span className="text-xs font-bold text-drc-blue ml-2">{(province.memberCount || 0).toLocaleString()}</span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-1.5">
                   <div
-                    className="h-1.5 rounded-full bg-drc-green transition-all duration-500"
+                    className="h-1.5 rounded-full bg-drc-blue transition-all duration-500"
                     style={{ width: `${pct}%` }}
                   />
                 </div>
@@ -64,8 +64,8 @@ export default function ProvinceMap({ selectedProvince, onSelectProvince, compac
               key={province.id}
               className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
                 isSelected
-                  ? 'bg-green-50 border-drc-green shadow-md'
-                  : 'bg-white border-gray-100 hover:border-drc-green hover:shadow-sm'
+                  ? 'bg-blue-50 border-drc-blue shadow-md'
+                  : 'bg-white border-gray-100 hover:border-drc-blue hover:shadow-sm'
               }`}
               onClick={() => onSelectProvince?.(province)}
             >
@@ -84,11 +84,11 @@ export default function ProvinceMap({ selectedProvince, onSelectProvince, compac
                   <span className="text-gray-500 flex items-center gap-1">
                     <Users className="w-3 h-3" /> Membres
                   </span>
-                  <span className="font-bold text-drc-green">{(province.memberCount || 0).toLocaleString()}</span>
+                  <span className="font-bold text-drc-blue">{(province.memberCount || 0).toLocaleString()}</span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-2">
                   <div
-                    className="h-2 rounded-full bg-drc-green"
+                    className="h-2 rounded-full bg-drc-blue"
                     style={{ width: `${pct}%` }}
                   />
                 </div>

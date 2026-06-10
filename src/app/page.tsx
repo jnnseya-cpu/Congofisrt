@@ -80,7 +80,7 @@ export default function LandingPage() {
             </h1>
 
             {/* Tagline */}
-            <p className="text-lg md:text-xl text-green-200 mb-6 leading-relaxed max-w-3xl">
+            <p className="text-lg md:text-xl text-blue-200 mb-6 leading-relaxed max-w-3xl">
               Le premier parti politique congolais dirigé par des citoyens, renforcé par
               l&apos;intelligence artificielle, structuré depuis le village jusqu&apos;à la Présidence,
               et fondé sur la <strong className="text-white">compétence</strong>,
@@ -91,7 +91,7 @@ export default function LandingPage() {
             {/* Founder */}
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-drc-yellow rounded-full flex items-center justify-center">
-                <span className="text-drc-green-dark font-black text-sm">JN</span>
+                <span className="text-drc-blue-dark font-black text-sm">JN</span>
               </div>
               <div>
                 <p className="text-white/60 text-xs uppercase tracking-widest">Fondateur &amp; Président</p>
@@ -122,7 +122,7 @@ export default function LandingPage() {
             ].map(stat => (
               <div key={stat.label} className="text-center">
                 <p className="text-2xl font-black text-drc-yellow">{stat.value}</p>
-                <p className="text-green-200 text-xs">{stat.label}</p>
+                <p className="text-blue-200 text-xs">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -130,7 +130,7 @@ export default function LandingPage() {
       </section>
 
       {/* ===== SLOGANS IN 5 LANGUAGES ===== */}
-      <section className="bg-drc-green-dark py-8">
+      <section className="bg-drc-blue-dark py-8">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap gap-3 justify-center">
             {SLOGANS.map((s, i) => (
@@ -139,7 +139,7 @@ export default function LandingPage() {
                 onClick={() => setActiveSloganIdx(i)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeSloganIdx === i
-                    ? 'bg-drc-yellow text-drc-green-dark font-bold'
+                    ? 'bg-drc-yellow text-drc-blue-dark font-bold'
                     : 'bg-white/10 text-white/70 hover:bg-white/20'
                 }`}
               >
@@ -157,7 +157,7 @@ export default function LandingPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-drc-green px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-drc-blue px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Brain className="w-4 h-4" /> Intelligence Artificielle
             </div>
             <h2 className="section-title">12 Agents IA Spécialisés</h2>
@@ -179,7 +179,7 @@ export default function LandingPage() {
                   <div className={`w-10 h-10 rounded-lg ${agent.color} flex items-center justify-center mb-3`}>
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-bold text-gray-900 text-sm mb-1 group-hover:text-drc-green transition-colors">{agent.title}</h3>
+                  <h3 className="font-bold text-gray-900 text-sm mb-1 group-hover:text-drc-blue transition-colors">{agent.title}</h3>
                   <p className="text-xs text-gray-500 leading-relaxed">{agent.desc}</p>
                 </div>
               );
@@ -226,20 +226,20 @@ export default function LandingPage() {
             {/* Province Grid */}
             <div>
               <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-drc-green" /> 26 Provinces — Couverture nationale
+                <Globe className="w-5 h-5 text-drc-blue" /> 26 Provinces — Couverture nationale
               </h3>
               <div className="grid grid-cols-2 gap-2 max-h-[500px] overflow-y-auto scrollbar-thin pr-2">
                 {DRC_PROVINCES.map(province => (
-                  <div key={province.id} className="bg-white rounded-lg p-3 border border-gray-100 hover:border-drc-green transition-colors">
+                  <div key={province.id} className="bg-white rounded-lg p-3 border border-gray-100 hover:border-drc-blue transition-colors">
                     <p className="text-xs font-bold text-gray-900 truncate">{province.name}</p>
                     <p className="text-xs text-gray-500">{province.capital}</p>
                     <div className="mt-2 flex items-center justify-between">
-                      <span className="text-xs font-semibold text-drc-green">
+                      <span className="text-xs font-semibold text-drc-blue">
                         {(province.memberCount || 0).toLocaleString()} membres
                       </span>
                       <div className="w-16 bg-gray-100 rounded-full h-1.5">
                         <div
-                          className="h-1.5 bg-drc-green rounded-full"
+                          className="h-1.5 bg-drc-blue rounded-full"
                           style={{ width: `${province.electionReadiness || 0}%` }}
                         />
                       </div>
@@ -253,13 +253,13 @@ export default function LandingPage() {
       </section>
 
       {/* ===== WHAT MAKES US DIFFERENT ===== */}
-      <section className="py-20 bg-drc-green">
+      <section className="py-20 bg-drc-blue">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
               Ce qui nous différencie
             </h2>
-            <p className="text-green-200 text-lg max-w-2xl mx-auto">
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
               Dirigé par les citoyens. Assisté par l&apos;IA. Fondé sur les données. Transparent. Méritocratique.
             </p>
           </div>
@@ -267,7 +267,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {DIFFERENCES.map((diff, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white">
-                <div className="w-8 h-8 bg-drc-yellow rounded-full flex items-center justify-center text-drc-green-dark font-black text-sm mb-3">
+                <div className="w-8 h-8 bg-drc-yellow rounded-full flex items-center justify-center text-drc-blue-dark font-black text-sm mb-3">
                   {i + 1}
                 </div>
                 <p className="text-sm font-medium leading-relaxed">{diff}</p>
@@ -280,7 +280,7 @@ export default function LandingPage() {
       {/* ===== CTA ===== */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="w-16 h-16 bg-drc-green rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-drc-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Users className="w-8 h-8 text-drc-yellow" />
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -295,13 +295,13 @@ export default function LandingPage() {
             <Link href="/register" className="btn-primary flex items-center gap-2 text-lg px-8 py-4">
               S&apos;inscrire maintenant <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/candidates" className="border-2 border-drc-green text-drc-green px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition-all flex items-center gap-2">
+            <Link href="/candidates" className="border-2 border-drc-blue text-drc-blue px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition-all flex items-center gap-2">
               Voir les candidats IA <Brain className="w-5 h-5" />
             </Link>
           </div>
 
-          <div className="mt-10 p-4 bg-green-50 rounded-xl border border-green-100 text-sm text-gray-600">
-            <strong className="text-drc-green">Engagement de confidentialité :</strong> Vos données sont utilisées
+          <div className="mt-10 p-4 bg-blue-50 rounded-xl border border-green-100 text-sm text-gray-600">
+            <strong className="text-drc-blue">Engagement de confidentialité :</strong> Vos données sont utilisées
             uniquement pour la gestion du parti. Aucune surveillance privée, aucune vente de données,
             aucune exploitation politique sans votre consentement.
           </div>

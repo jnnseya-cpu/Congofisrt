@@ -66,7 +66,7 @@ export default function CandidateCard({ member, scores, rank, justification, ris
       {/* Role */}
       <div className="bg-gray-50 rounded-lg px-3 py-2 mb-4">
         <p className="text-xs text-gray-500">Proposé pour</p>
-        <p className="text-sm font-semibold text-drc-green-dark">{roleName}</p>
+        <p className="text-sm font-semibold text-drc-blue-dark">{roleName}</p>
       </div>
 
       {/* Total Score */}
@@ -93,9 +93,9 @@ export default function CandidateCard({ member, scores, rank, justification, ris
 
       {/* AI Justification */}
       {justification && (
-        <div className="mt-3 p-3 bg-green-50 rounded-lg border border-green-100">
+        <div className="mt-3 p-3 bg-blue-50 rounded-lg border border-green-100">
           <div className="flex items-start gap-2">
-            <CheckCircle className="w-4 h-4 text-drc-green mt-0.5 shrink-0" />
+            <CheckCircle className="w-4 h-4 text-drc-blue mt-0.5 shrink-0" />
             <p className="text-xs text-gray-700">{justification}</p>
           </div>
         </div>

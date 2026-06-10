@@ -9,18 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'drc-green': '#006400',
+        // DRC Flag colors: Sky Blue, Yellow, Red
+        'drc-blue': '#007FFF',
+        'drc-blue-light': '#3399FF',
+        'drc-blue-dark': '#0055CC',
         'drc-yellow': '#FCD116',
+        'drc-yellow-dark': '#E6B800',
         'drc-red': '#CE1126',
-        'drc-green-light': '#008000',
-        'drc-green-dark': '#004d00',
+        // Keep green aliases pointing to blue for backward compat
+        'drc-green': '#007FFF',
+        'drc-green-light': '#3399FF',
+        'drc-green-dark': '#0055CC',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-drc': 'linear-gradient(135deg, #006400 0%, #004d00 50%, #003300 100%)',
-        'gradient-flag': 'linear-gradient(90deg, #006400 33%, #FCD116 33%, #FCD116 66%, #CE1126 66%)',
+        'gradient-drc': 'linear-gradient(135deg, #007FFF 0%, #0055CC 50%, #003399 100%)',
+        // Actual DRC flag: sky blue bg with red diagonal stripe bordered by yellow
+        'gradient-flag': 'linear-gradient(90deg, #007FFF 33%, #FCD116 33%, #FCD116 66%, #CE1126 66%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

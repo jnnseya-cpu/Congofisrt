@@ -141,7 +141,7 @@ export default function RegisterPage() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
         <div className="max-w-lg w-full text-center">
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-10 h-10 text-drc-green" />
+            <CheckCircle className="w-10 h-10 text-drc-blue" />
           </div>
           <h2 className="text-3xl font-black text-gray-900 mb-3">Inscription réussie !</h2>
           <p className="text-gray-600 mb-2">
@@ -150,8 +150,8 @@ export default function RegisterPage() {
           <p className="text-gray-500 text-sm mb-6">
             Votre dossier a été transmis à votre coordinateur local. Vous recevrez une confirmation par email à <strong>{form.email}</strong>.
           </p>
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6 text-left">
-            <h4 className="font-semibold text-drc-green mb-2">Prochaines étapes :</h4>
+          <div className="bg-blue-50 border border-green-200 rounded-xl p-4 mb-6 text-left">
+            <h4 className="font-semibold text-drc-blue mb-2">Prochaines étapes :</h4>
             <ul className="space-y-1 text-sm text-gray-700">
               <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Configurer votre premier paiement de $5 USD</li>
               <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Accéder à l'Académie Politique CDP</li>
@@ -161,7 +161,7 @@ export default function RegisterPage() {
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
             <a href="/dashboard" className="btn-primary text-sm">Accéder au tableau de bord</a>
-            <a href="/training" className="border-2 border-drc-green text-drc-green px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-green-50">Commencer la formation</a>
+            <a href="/training" className="border-2 border-drc-blue text-drc-blue px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-50">Commencer la formation</a>
           </div>
         </div>
       </div>
@@ -171,11 +171,11 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-drc-green text-white py-8">
+      <div className="bg-drc-blue text-white py-8">
         <div className="flag-stripe -mt-8 mb-0" />
         <div className="max-w-4xl mx-auto px-4 pt-8 text-center">
           <h1 className="text-3xl font-black mb-2">Inscription — Congo D'Abord</h1>
-          <p className="text-green-200">Rejoignez le mouvement citoyen pour un Congo meilleur</p>
+          <p className="text-blue-200">Rejoignez le mouvement citoyen pour un Congo meilleur</p>
         </div>
       </div>
 
@@ -192,8 +192,8 @@ export default function RegisterPage() {
                   <button
                     onClick={() => isDone ? setStep(s.num) : undefined}
                     className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap ${
-                      isActive ? 'bg-drc-green text-white' :
-                      isDone ? 'bg-green-100 text-drc-green cursor-pointer hover:bg-green-200' :
+                      isActive ? 'bg-drc-blue text-white' :
+                      isDone ? 'bg-green-100 text-drc-blue cursor-pointer hover:bg-green-200' :
                       'bg-gray-100 text-gray-400 cursor-default'
                     }`}
                   >
@@ -202,7 +202,7 @@ export default function RegisterPage() {
                     <span className="sm:hidden">{s.num}</span>
                   </button>
                   {i < STEPS.length - 1 && (
-                    <div className={`h-0.5 flex-1 mx-1 ${step > s.num ? 'bg-drc-green' : 'bg-gray-200'}`} />
+                    <div className={`h-0.5 flex-1 mx-1 ${step > s.num ? 'bg-drc-blue' : 'bg-gray-200'}`} />
                   )}
                 </div>
               );
@@ -219,7 +219,7 @@ export default function RegisterPage() {
           {step === 1 && (
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
-                <User className="w-5 h-5 text-drc-green" /> Identité personnelle
+                <User className="w-5 h-5 text-drc-blue" /> Identité personnelle
               </h2>
               <p className="text-gray-500 text-sm mb-6">Informations de base du membre</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -270,7 +270,7 @@ export default function RegisterPage() {
           {step === 2 && (
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-drc-green" /> Localisation Administrative
+                <MapPin className="w-5 h-5 text-drc-blue" /> Localisation Administrative
               </h2>
               <p className="text-gray-500 text-sm mb-6">Votre positionnement géographique dans la structure du parti</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -342,7 +342,7 @@ export default function RegisterPage() {
           {step === 3 && (
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-drc-green" /> Profil Éducatif
+                <BookOpen className="w-5 h-5 text-drc-blue" /> Profil Éducatif
               </h2>
               <p className="text-gray-500 text-sm mb-6">Votre formation académique et qualifications</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -385,7 +385,7 @@ export default function RegisterPage() {
           {step === 4 && (
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
-                <Briefcase className="w-5 h-5 text-drc-green" /> Profil Professionnel
+                <Briefcase className="w-5 h-5 text-drc-blue" /> Profil Professionnel
               </h2>
               <p className="text-gray-500 text-sm mb-6">Votre parcours professionnel et expérience de travail</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -416,7 +416,7 @@ export default function RegisterPage() {
           {step === 5 && (
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
-                <Star className="w-5 h-5 text-drc-green" /> Profil Politique & Civique
+                <Star className="w-5 h-5 text-drc-blue" /> Profil Politique & Civique
               </h2>
               <p className="text-gray-500 text-sm mb-6">Votre engagement civique et politique antérieur</p>
               <div className="grid grid-cols-1 gap-5">
@@ -443,8 +443,8 @@ export default function RegisterPage() {
                         onClick={() => toggleLanguage(lang.code)}
                         className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all border ${
                           form.languagesSpoken.includes(lang.code)
-                            ? 'bg-drc-green text-white border-drc-green'
-                            : 'bg-white text-gray-700 border-gray-300 hover:border-drc-green'
+                            ? 'bg-drc-blue text-white border-drc-blue'
+                            : 'bg-white text-gray-700 border-gray-300 hover:border-drc-blue'
                         }`}
                       >
                         {lang.label}
@@ -460,25 +460,25 @@ export default function RegisterPage() {
           {step === 6 && (
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-drc-green" /> Cotisation Mensuelle
+                <DollarSign className="w-5 h-5 text-drc-blue" /> Cotisation Mensuelle
               </h2>
               <p className="text-gray-500 text-sm mb-6">Configuration de votre engagement financier</p>
 
               {/* Contribution Info */}
-              <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-6">
+              <div className="bg-blue-50 border border-green-200 rounded-xl p-5 mb-6">
                 <div className="flex items-start gap-3">
-                  <div className="w-12 h-12 bg-drc-green rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-drc-blue rounded-xl flex items-center justify-center shrink-0">
                     <DollarSign className="w-6 h-6 text-drc-yellow" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-drc-green text-lg">$5 USD / mois</h3>
+                    <h3 className="font-bold text-drc-blue text-lg">$5 USD / mois</h3>
                     <p className="text-gray-700 text-sm mt-1">
                       La cotisation mensuelle de $5 USD garantit votre statut de membre actif et votre éligibilité
                       à toutes les processus de sélection du parti.
                     </p>
                     <div className="mt-3 grid grid-cols-2 gap-2">
                       {['Éligibilité à la sélection', 'Accès à la formation', 'Droits de vote interne', 'Reconnaissance officielle'].map(b => (
-                        <div key={b} className="flex items-center gap-1.5 text-xs text-drc-green">
+                        <div key={b} className="flex items-center gap-1.5 text-xs text-drc-blue">
                           <CheckCircle className="w-3.5 h-3.5" /> {b}
                         </div>
                       ))}
@@ -507,7 +507,7 @@ export default function RegisterPage() {
                 <div className="space-y-2 mt-2">
                   {PAYMENT_METHODS.map(method => (
                     <label key={method} className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
-                      form.paymentMethod === method ? 'border-drc-green bg-green-50' : 'border-gray-200 hover:border-gray-300'
+                      form.paymentMethod === method ? 'border-drc-blue bg-blue-50' : 'border-gray-200 hover:border-gray-300'
                     }`}>
                       <input
                         type="radio"
@@ -515,7 +515,7 @@ export default function RegisterPage() {
                         value={method}
                         checked={form.paymentMethod === method}
                         onChange={() => update('paymentMethod', method)}
-                        className="text-drc-green"
+                        className="text-drc-blue"
                       />
                       <span className="text-sm text-gray-700">{method}</span>
                     </label>
@@ -526,13 +526,13 @@ export default function RegisterPage() {
 
               {/* Terms */}
               <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
-                form.agreeTerms ? 'border-drc-green bg-green-50' : 'border-gray-200'
+                form.agreeTerms ? 'border-drc-blue bg-blue-50' : 'border-gray-200'
               }`}>
                 <input
                   type="checkbox"
                   checked={form.agreeTerms}
                   onChange={e => update('agreeTerms', e.target.checked)}
-                  className="mt-0.5 text-drc-green"
+                  className="mt-0.5 text-drc-blue"
                 />
                 <span className="text-sm text-gray-700">
                   J'accepte les conditions d'adhésion au parti Congo D'Abord, je comprends l'obligation de cotisation mensuelle de $5 USD
@@ -548,7 +548,7 @@ export default function RegisterPage() {
             <button
               onClick={() => step > 1 ? setStep((step - 1) as Step) : undefined}
               disabled={step === 1}
-              className="flex items-center gap-2 text-gray-600 font-semibold disabled:opacity-40 hover:text-drc-green transition-colors"
+              className="flex items-center gap-2 text-gray-600 font-semibold disabled:opacity-40 hover:text-drc-blue transition-colors"
             >
               <ChevronLeft className="w-4 h-4" /> Précédent
             </button>

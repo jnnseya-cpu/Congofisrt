@@ -39,7 +39,7 @@ export default function InfrastructurePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-drc-green text-white">
+      <div className="bg-drc-blue text-white">
         <div className="flag-stripe" />
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between flex-wrap gap-4">
@@ -47,16 +47,16 @@ export default function InfrastructurePage() {
               <h1 className="text-2xl md:text-3xl font-black flex items-center gap-2">
                 <Map className="w-7 h-7 text-drc-yellow" /> Cartographie des Besoins en Infrastructure
               </h1>
-              <p className="text-green-200 text-sm mt-1">Identification et priorisation par l'Agent Infrastructure IA</p>
+              <p className="text-blue-200 text-sm mt-1">Identification et priorisation par l'Agent Infrastructure IA</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-white/10 rounded-lg px-4 py-2 text-center">
                 <p className="text-drc-yellow font-black text-xl">{criticalCount}</p>
-                <p className="text-green-200 text-xs">Besoins critiques</p>
+                <p className="text-blue-200 text-xs">Besoins critiques</p>
               </div>
               <div className="bg-white/10 rounded-lg px-4 py-2 text-center">
                 <p className="text-drc-yellow font-black text-xl">{(totalAffected / 1000000).toFixed(1)}M</p>
-                <p className="text-green-200 text-xs">Personnes affectées</p>
+                <p className="text-blue-200 text-xs">Personnes affectées</p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function InfrastructurePage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as typeof activeTab)}
                   className={`flex items-center gap-1.5 px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
-                    activeTab === tab.id ? 'border-drc-green text-drc-green' : 'border-transparent text-gray-600'
+                    activeTab === tab.id ? 'border-drc-blue text-drc-blue' : 'border-transparent text-gray-600'
                   }`}
                 >
                   <Icon className="w-4 h-4" /> {tab.label}
@@ -100,7 +100,7 @@ export default function InfrastructurePage() {
                       key={s}
                       onClick={() => setSeverityFilter(s)}
                       className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
-                        severityFilter === s ? 'bg-drc-green text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        severityFilter === s ? 'bg-drc-blue text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                       }`}
                     >
                       {s === 'all' ? 'Tous' : s === 'Critical' ? 'Critique' : s === 'High' ? 'Élevé' : s === 'Medium' ? 'Moyen' : 'Faible'}
@@ -116,7 +116,7 @@ export default function InfrastructurePage() {
                       key={c}
                       onClick={() => setCategoryFilter(c)}
                       className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
-                        categoryFilter === c ? 'bg-drc-green text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        categoryFilter === c ? 'bg-drc-blue text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                       }`}
                     >
                       {c === 'all' ? 'Tout' : c}
@@ -166,7 +166,7 @@ export default function InfrastructurePage() {
                     </div>
 
                     <div className="mt-4 pt-3 border-t border-gray-100 flex gap-2">
-                      <button className="text-xs text-drc-green font-semibold hover:underline">
+                      <button className="text-xs text-drc-blue font-semibold hover:underline">
                         Créer une proposition politique →
                       </button>
                     </div>
@@ -201,7 +201,7 @@ export default function InfrastructurePage() {
                   return (
                     <div key={cat} className={`p-3 rounded-xl border ${hasCritical ? 'border-red-200 bg-red-50' : 'border-gray-100 bg-white'}`}>
                       <div className="flex items-center gap-2 mb-2">
-                        <Icon className={`w-4 h-4 ${hasCritical ? 'text-red-500' : 'text-drc-green'}`} />
+                        <Icon className={`w-4 h-4 ${hasCritical ? 'text-red-500' : 'text-drc-blue'}`} />
                         <span className="text-xs font-semibold text-gray-700">{cat}</span>
                       </div>
                       <p className={`text-2xl font-black ${hasCritical ? 'text-red-600' : 'text-gray-900'}`}>{count}</p>

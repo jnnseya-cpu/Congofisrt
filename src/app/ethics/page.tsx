@@ -31,7 +31,7 @@ export default function EthicsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-drc-green text-white">
+      <div className="bg-drc-blue text-white">
         <div className="flag-stripe" />
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between flex-wrap gap-4">
@@ -39,16 +39,16 @@ export default function EthicsPage() {
               <h1 className="text-2xl md:text-3xl font-black flex items-center gap-2">
                 <Shield className="w-7 h-7 text-drc-yellow" /> Commission Éthique et Discipline
               </h1>
-              <p className="text-green-200 text-sm mt-1">Intégrité, transparence et responsabilité partisane</p>
+              <p className="text-blue-200 text-sm mt-1">Intégrité, transparence et responsabilité partisane</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-white/10 rounded-lg px-4 py-2 text-center">
                 <p className="text-drc-yellow font-black text-xl">{openCases}</p>
-                <p className="text-green-200 text-xs">Cas actifs</p>
+                <p className="text-blue-200 text-xs">Cas actifs</p>
               </div>
               <div className="bg-white/10 rounded-lg px-4 py-2 text-center">
-                <p className="text-green-300 font-black text-xl">{resolvedCases}</p>
-                <p className="text-green-200 text-xs">Résolus</p>
+                <p className="text-blue-300 font-black text-xl">{resolvedCases}</p>
+                <p className="text-blue-200 text-xs">Résolus</p>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function EthicsPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as typeof activeTab)}
                   className={`flex items-center gap-1.5 px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
-                    activeTab === tab.id ? 'border-drc-green text-drc-green' : 'border-transparent text-gray-600'
+                    activeTab === tab.id ? 'border-drc-blue text-drc-blue' : 'border-transparent text-gray-600'
                   }`}
                 >
                   <Icon className="w-4 h-4" /> {tab.label}
@@ -131,7 +131,7 @@ export default function EthicsPage() {
                     <p className="text-gray-700 text-sm mb-3">{c.description}</p>
 
                     {c.resolution && (
-                      <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                      <div className="p-3 bg-blue-50 rounded-lg border border-green-100">
                         <p className="text-xs font-semibold text-green-700 mb-1">Résolution</p>
                         <p className="text-sm text-gray-700">{c.resolution}</p>
                       </div>
@@ -143,7 +143,7 @@ export default function EthicsPage() {
                         <span>Identité du membre protégée selon procédure</span>
                       </div>
                       {c.status !== 'Resolved' && c.status !== 'Dismissed' && (
-                        <button className="text-drc-green font-semibold hover:underline">
+                        <button className="text-drc-blue font-semibold hover:underline">
                           Voir détails →
                         </button>
                       )}
@@ -196,7 +196,7 @@ export default function EthicsPage() {
                   <label className="form-label">Preuves disponibles (description)</label>
                   <textarea className="form-input" rows={2} placeholder="Ex: Témoins, documents, photos, vidéos..." />
                 </div>
-                <div className="flex items-start gap-2 p-3 bg-green-50 rounded-lg border border-green-100">
+                <div className="flex items-start gap-2 p-3 bg-blue-50 rounded-lg border border-green-100">
                   <input type="checkbox" className="mt-0.5" />
                   <p className="text-sm text-gray-700">
                     Je déclare que les informations fournies sont vraies à ma connaissance et j'accepte
@@ -213,7 +213,7 @@ export default function EthicsPage() {
           <div className="max-w-3xl mx-auto">
             <div className="card">
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-drc-green rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-drc-blue rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-drc-yellow" />
                 </div>
                 <h2 className="text-2xl font-black text-gray-900">Charte d'Éthique et d'Intégrité</h2>
@@ -247,15 +247,15 @@ export default function EthicsPage() {
                     content: 'Tout cas d\'éthique avéré impacte directement le score de sélection du membre. Un cas de corruption grave entraîne l\'inéligibilité permanente à toute nomination ou candidature.',
                   },
                 ].map(section => (
-                  <div key={section.title} className="border-l-4 border-drc-green pl-4">
+                  <div key={section.title} className="border-l-4 border-drc-blue pl-4">
                     <h3 className="font-bold text-gray-900 mb-2">{section.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{section.content}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 p-4 bg-green-50 rounded-xl border border-green-200 text-center">
-                <p className="text-drc-green font-bold">Signé et approuvé par</p>
+              <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-green-200 text-center">
+                <p className="text-drc-blue font-bold">Signé et approuvé par</p>
                 <p className="text-gray-900 font-black text-lg mt-1">Mr Justin Nseya</p>
                 <p className="text-gray-500 text-sm">Fondateur & Président — Congo D'Abord</p>
               </div>
@@ -283,7 +283,7 @@ export default function EthicsPage() {
                   'Score d\'intégrité mis à jour automatiquement après chaque cas',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg text-sm text-gray-700">
-                    <Shield className="w-4 h-4 text-drc-green shrink-0" />
+                    <Shield className="w-4 h-4 text-drc-blue shrink-0" />
                     {item}
                   </div>
                 ))}

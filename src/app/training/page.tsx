@@ -105,7 +105,7 @@ export default function TrainingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-drc-green text-white">
+      <div className="bg-drc-blue text-white">
         <div className="flag-stripe" />
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex items-start justify-between">
@@ -115,7 +115,7 @@ export default function TrainingPage() {
                 <span className="text-drc-yellow text-sm font-semibold">CDP-AI OS — Académie Politique</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-black">Académie Politique Congo D&apos;Abord</h1>
-              <p className="text-green-200 text-sm mt-1">Formation des futurs dirigeants congolais — 14 modules certifiants</p>
+              <p className="text-blue-200 text-sm mt-1">Formation des futurs dirigeants congolais — 14 modules certifiants</p>
             </div>
             <button onClick={() => setShowAI(!showAI)} className="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium border border-white/20 transition-all">
               <Brain className="w-4 h-4" /> Agent Formation
@@ -132,14 +132,14 @@ export default function TrainingPage() {
             ].map(stat => (
               <div key={stat.label} className="bg-white/10 rounded-lg p-3 text-center">
                 <p className="text-2xl font-black text-drc-yellow">{stat.value}</p>
-                <p className="text-green-200 text-xs">{stat.label}</p>
+                <p className="text-blue-200 text-xs">{stat.label}</p>
               </div>
             ))}
           </div>
 
           {/* Progress Bar */}
           <div className="mt-4">
-            <div className="flex justify-between text-xs text-green-200 mb-1">
+            <div className="flex justify-between text-xs text-blue-200 mb-1">
               <span>Progression de formation</span>
               <span>{overallProgress}%</span>
             </div>
@@ -163,7 +163,7 @@ export default function TrainingPage() {
                       key={cat}
                       onClick={() => setActiveCategory(cat)}
                       className={`text-left px-3 py-2 rounded-lg text-sm transition-all ${
-                        activeCategory === cat ? 'bg-drc-green text-white font-semibold' : 'text-gray-600 hover:bg-gray-100'
+                        activeCategory === cat ? 'bg-drc-blue text-white font-semibold' : 'text-gray-600 hover:bg-gray-100'
                       }`}
                     >
                       {cat}
@@ -179,7 +179,7 @@ export default function TrainingPage() {
                       key={level}
                       onClick={() => setActiveLevel(level)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                        activeLevel === level ? 'bg-drc-green text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        activeLevel === level ? 'bg-drc-blue text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                       }`}
                     >
                       {level}
@@ -207,7 +207,7 @@ export default function TrainingPage() {
             <div className="flex items-center justify-between mb-4">
               <p className="text-sm text-gray-600"><strong>{filtered.length}</strong> modules disponibles</p>
               <div className="flex items-center gap-2 text-xs text-gray-500">
-                <CheckCircle className="w-3.5 h-3.5 text-drc-green" /> Complété
+                <CheckCircle className="w-3.5 h-3.5 text-drc-blue" /> Complété
                 <Play className="w-3.5 h-3.5 text-blue-500" /> Disponible
                 <Lock className="w-3.5 h-3.5 text-gray-400" /> Bloqué
               </div>
@@ -218,12 +218,12 @@ export default function TrainingPage() {
                 <div
                   key={module.id}
                   onClick={() => setSelectedModule(selectedModule === module.id ? null : module.id)}
-                  className={`card-hover cursor-pointer ${module.completed ? 'border-l-4 border-drc-green' : ''}`}
+                  className={`card-hover cursor-pointer ${module.completed ? 'border-l-4 border-drc-blue' : ''}`}
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex items-center gap-2">
                       {module.completed ? (
-                        <div className="w-7 h-7 bg-drc-green rounded-full flex items-center justify-center">
+                        <div className="w-7 h-7 bg-drc-blue rounded-full flex items-center justify-center">
                           <CheckCircle className="w-4 h-4 text-white" />
                         </div>
                       ) : (
@@ -250,11 +250,11 @@ export default function TrainingPage() {
                     {module.score && (
                       <div className="flex items-center gap-1">
                         <span className="text-xs text-gray-500">Score :</span>
-                        <span className="text-sm font-black text-drc-green">{module.score}/100</span>
+                        <span className="text-sm font-black text-drc-blue">{module.score}/100</span>
                       </div>
                     )}
                     {!module.completed && (
-                      <button className="text-xs font-semibold text-drc-green hover:underline">Commencer →</button>
+                      <button className="text-xs font-semibold text-drc-blue hover:underline">Commencer →</button>
                     )}
                   </div>
 

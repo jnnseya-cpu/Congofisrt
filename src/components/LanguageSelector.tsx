@@ -38,7 +38,7 @@ export default function LanguageSelector({ language, setLanguage }: LanguageSele
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-drc-green bg-gray-50 hover:bg-green-50 border border-gray-200 rounded-lg px-3 py-2 transition-all"
+        className="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-drc-blue bg-gray-50 hover:bg-blue-50 border border-gray-200 rounded-lg px-3 py-2 transition-all"
       >
         <Globe className="w-4 h-4" />
         <span className="hidden sm:inline">{FLAG_EMOJI[language]} {LANGUAGE_NAMES[language]}</span>
@@ -55,13 +55,13 @@ export default function LanguageSelector({ language, setLanguage }: LanguageSele
             <button
               key={code}
               onClick={() => { setLanguage(code); setOpen(false); }}
-              className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2 hover:bg-green-50 transition-colors ${
-                language === code ? 'text-drc-green font-semibold bg-green-50' : 'text-gray-700'
+              className={`w-full text-left px-4 py-2.5 text-sm flex items-center gap-2 hover:bg-blue-50 transition-colors ${
+                language === code ? 'text-drc-blue font-semibold bg-blue-50' : 'text-gray-700'
               }`}
             >
               <span className="text-base">{FLAG_EMOJI[code]}</span>
               <span>{name}</span>
-              {language === code && <span className="ml-auto text-drc-green text-xs">✓</span>}
+              {language === code && <span className="ml-auto text-drc-blue text-xs">✓</span>}
             </button>
           ))}
         </div>

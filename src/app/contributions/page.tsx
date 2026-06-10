@@ -65,12 +65,12 @@ export default function ContributionsPage() {
           <div className="flex items-start justify-between">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <DollarSign className="w-5 h-5 text-drc-green" />
-                <span className="text-drc-green text-sm font-semibold">CDP-AI OS — Agent Financier</span>
+                <DollarSign className="w-5 h-5 text-drc-blue" />
+                <span className="text-drc-blue text-sm font-semibold">CDP-AI OS — Agent Financier</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-black text-gray-900">Gestion des Cotisations</h1>
               <p className="text-gray-500 text-sm mt-1">
-                Cotisation mensuelle : <strong className="text-drc-green">5 USD / membre / mois</strong>
+                Cotisation mensuelle : <strong className="text-drc-blue">5 USD / membre / mois</strong>
               </p>
             </div>
             <button className="hidden md:flex items-center gap-2 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition-all">
@@ -99,7 +99,7 @@ export default function ContributionsPage() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as typeof activeTab)}
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
-                  activeTab === tab.id ? 'bg-drc-green text-white' : 'text-gray-600 hover:bg-gray-100'
+                  activeTab === tab.id ? 'bg-drc-blue text-white' : 'text-gray-600 hover:bg-gray-100'
                 }`}
               >
                 {tab.label}
@@ -117,7 +117,7 @@ export default function ContributionsPage() {
             {/* Summary Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { label: 'Membres totaux', value: totalMembers.toLocaleString(), sub: 'inscrits', icon: Users, color: 'text-drc-green' },
+                { label: 'Membres totaux', value: totalMembers.toLocaleString(), sub: 'inscrits', icon: Users, color: 'text-drc-blue' },
                 { label: 'Cotisants actifs', value: activeCount.toLocaleString(), sub: `${Math.round(activeCount / totalMembers * 100)}% des membres`, icon: CheckCircle, color: 'text-emerald-600' },
                 { label: 'Recettes juin 2025', value: '$136,700', sub: 'USD collectés', icon: DollarSign, color: 'text-yellow-700' },
                 { label: 'Total 2025', value: `$${(totalRevenue / 1000).toFixed(0)}k`, sub: 'cumulé 2025', icon: TrendingUp, color: 'text-blue-600' },
@@ -206,7 +206,7 @@ export default function ContributionsPage() {
                       <td className="py-3 px-3"><ContributionBadge status={m.status} /></td>
                       <td className="py-3 px-3 text-gray-600">{m.lastPayment}</td>
                       <td className="py-3 px-3 text-gray-600">{m.months}</td>
-                      <td className="py-3 px-3 font-semibold text-drc-green">${(m.months * 5).toLocaleString()}</td>
+                      <td className="py-3 px-3 font-semibold text-drc-blue">${(m.months * 5).toLocaleString()}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -235,7 +235,7 @@ export default function ContributionsPage() {
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Cotisants actifs</span>
-                      <span className="font-bold text-drc-green">{prov.active.toLocaleString()}</span>
+                      <span className="font-bold text-drc-blue">{prov.active.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Recettes mensuelles</span>
@@ -247,7 +247,7 @@ export default function ContributionsPage() {
                         <span className="font-semibold">{Math.round(prov.active / prov.members * 100)}%</span>
                       </div>
                       <div className="w-full bg-gray-100 rounded-full h-2">
-                        <div className="h-2 bg-drc-green rounded-full" style={{ width: `${prov.active / prov.members * 100}%` }} />
+                        <div className="h-2 bg-drc-blue rounded-full" style={{ width: `${prov.active / prov.members * 100}%` }} />
                       </div>
                     </div>
                   </div>
@@ -260,11 +260,11 @@ export default function ContributionsPage() {
         {/* Transparency Tab */}
         {activeTab === 'transparency' && (
           <div className="space-y-6">
-            <div className="card bg-green-50 border-green-200">
+            <div className="card bg-blue-50 border-green-200">
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-drc-green mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-drc-blue mt-0.5" />
                 <div>
-                  <h3 className="font-bold text-drc-green-dark">Tableau de bord de transparence financière</h3>
+                  <h3 className="font-bold text-drc-blue-dark">Tableau de bord de transparence financière</h3>
                   <p className="text-sm text-gray-600 mt-1">
                     Congo D&apos;Abord s&apos;engage à une totale transparence sur les finances du parti.
                     Ce tableau est accessible au public. Les données financières individuelles restent strictement privées.
@@ -284,7 +284,7 @@ export default function ContributionsPage() {
                 ].map(item => (
                   <div key={item.label} className="flex justify-between py-3 border-b border-gray-100 last:border-0">
                     <span className="text-sm text-gray-600">{item.label}</span>
-                    <span className="font-bold text-drc-green">{item.value}</span>
+                    <span className="font-bold text-drc-blue">{item.value}</span>
                   </div>
                 ))}
               </div>
@@ -299,7 +299,7 @@ export default function ContributionsPage() {
                         <span className="font-bold text-gray-900">${exp.amount.toLocaleString()}</span>
                       </div>
                       <div className="w-full bg-gray-100 rounded-full h-2">
-                        <div className="h-2 bg-drc-green rounded-full" style={{ width: `${exp.percentage}%` }} />
+                        <div className="h-2 bg-drc-blue rounded-full" style={{ width: `${exp.percentage}%` }} />
                       </div>
                       <p className="text-xs text-gray-400 text-right">{exp.percentage}%</p>
                     </div>

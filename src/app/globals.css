@@ -5,10 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --drc-green: #006400;
-  --drc-green-light: #008000;
-  --drc-green-dark: #004d00;
+  --drc-blue: #007FFF;
+  --drc-blue-light: #3399FF;
+  --drc-blue-dark: #0055CC;
   --drc-yellow: #FCD116;
+  --drc-yellow-dark: #E6B800;
   --drc-red: #CE1126;
 }
 
@@ -32,11 +33,11 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-drc-green text-white font-semibold px-6 py-3 rounded-lg hover:bg-drc-green-light transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-drc-blue text-white font-semibold px-6 py-3 rounded-lg hover:bg-drc-blue-light transition-all duration-200 shadow-md hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply bg-drc-yellow text-drc-green-dark font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md;
+    @apply bg-drc-yellow text-drc-blue-dark font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md;
   }
 
   .btn-danger {
@@ -52,7 +53,7 @@ body {
   }
 
   .section-title {
-    @apply text-3xl font-bold text-drc-green-dark mb-2;
+    @apply text-3xl font-bold text-drc-blue-dark mb-2;
   }
 
   .section-subtitle {
@@ -60,7 +61,7 @@ body {
   }
 
   .badge-active {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800;
   }
 
   .badge-grace {
@@ -76,16 +77,17 @@ body {
   }
 
   .badge-exempted {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700;
   }
 
+  /* DRC Flag stripe: Blue | Yellow | Red */
   .flag-stripe {
-    height: 4px;
-    background: linear-gradient(90deg, #006400 33%, #FCD116 33%, #FCD116 66%, #CE1126 66%);
+    height: 6px;
+    background: linear-gradient(90deg, #007FFF 33%, #FCD116 33%, #FCD116 66%, #CE1126 66%);
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, #006400 0%, #004d00 60%, #003300 100%);
+    background: linear-gradient(135deg, #007FFF 0%, #0055CC 60%, #003399 100%);
   }
 
   .stat-card {
@@ -97,19 +99,19 @@ body {
   }
 
   .form-input {
-    @apply w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-drc-green focus:border-transparent transition-all;
+    @apply w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-drc-blue focus:border-transparent transition-all;
   }
 
   .form-select {
-    @apply w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-drc-green focus:border-transparent bg-white transition-all;
+    @apply w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-drc-blue focus:border-transparent bg-white transition-all;
   }
 
   .nav-link {
-    @apply text-sm font-medium text-gray-700 hover:text-drc-green transition-colors px-3 py-2 rounded-md hover:bg-green-50;
+    @apply text-sm font-medium text-gray-700 hover:text-drc-blue transition-colors px-3 py-2 rounded-md hover:bg-blue-50;
   }
 
   .nav-link-active {
-    @apply text-sm font-medium text-drc-green bg-green-50 px-3 py-2 rounded-md;
+    @apply text-sm font-medium text-drc-blue bg-blue-50 px-3 py-2 rounded-md;
   }
 
   .score-bar-fill {
@@ -129,7 +131,7 @@ body {
   }
 
   .agent-card {
-    @apply bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md hover:border-drc-green transition-all duration-200 cursor-pointer;
+    @apply bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md hover:border-drc-blue transition-all duration-200 cursor-pointer;
   }
 }
 
@@ -140,7 +142,7 @@ body {
 
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: #006400 #f1f5f9;
+    scrollbar-color: #007FFF #f1f5f9;
   }
 
   .scrollbar-thin::-webkit-scrollbar {
@@ -152,7 +154,7 @@ body {
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: #006400;
+    background-color: #007FFF;
     border-radius: 3px;
   }
 }

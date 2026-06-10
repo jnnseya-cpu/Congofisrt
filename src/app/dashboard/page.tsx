@@ -105,7 +105,7 @@ export default function FounderDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-drc-green text-white">
+      <div className="bg-drc-blue text-white">
         <div className="flag-stripe" />
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-start justify-between">
@@ -115,10 +115,10 @@ export default function FounderDashboard() {
                 <span className="text-drc-yellow text-sm font-semibold">CDP-AI OS — Tableau de bord Présidentiel</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-black">Bienvenue, Mr Justin Nseya</h1>
-              <p className="text-green-200 text-sm mt-1">Fondateur &amp; Président — Congo D&apos;Abord</p>
+              <p className="text-blue-200 text-sm mt-1">Fondateur &amp; Président — Congo D&apos;Abord</p>
             </div>
             <div className="hidden md:block text-right">
-              <p className="text-green-200 text-xs">Rapport généré le</p>
+              <p className="text-blue-200 text-xs">Rapport généré le</p>
               <p className="text-white font-bold">{new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function FounderDashboard() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as typeof activeTab)}
                 className={`px-4 py-2 rounded-t-lg text-sm font-semibold transition-all whitespace-nowrap ${
-                  activeTab === tab.id ? 'bg-white text-drc-green' : 'text-white/70 hover:text-white hover:bg-white/10'
+                  activeTab === tab.id ? 'bg-white text-drc-blue' : 'text-white/70 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {tab.label}
@@ -207,7 +207,7 @@ export default function FounderDashboard() {
               <div className="card">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-bold text-gray-900">Lacunes de leadership</h3>
-                  <Link href="/candidates" className="text-drc-green text-xs font-semibold hover:underline flex items-center gap-1">
+                  <Link href="/candidates" className="text-drc-blue text-xs font-semibold hover:underline flex items-center gap-1">
                     Voir candidats IA <ChevronRight className="w-3 h-3" />
                   </Link>
                 </div>
@@ -220,7 +220,7 @@ export default function FounderDashboard() {
                       </div>
                       <div className="w-full bg-gray-100 rounded-full h-2">
                         <div
-                          className="h-2 bg-drc-green rounded-full"
+                          className="h-2 bg-drc-blue rounded-full"
                           style={{ width: `${(gap.filled / (gap.filled + gap.provinces)) * 100}%` }}
                         />
                       </div>
@@ -256,7 +256,7 @@ export default function FounderDashboard() {
                     </div>
                   ))}
                 </div>
-                <Link href="/ethics" className="mt-4 flex items-center gap-1 text-drc-green text-xs font-semibold hover:underline">
+                <Link href="/ethics" className="mt-4 flex items-center gap-1 text-drc-blue text-xs font-semibold hover:underline">
                   Gérer les cas d&apos;éthique <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -290,7 +290,7 @@ export default function FounderDashboard() {
                       <p className="text-xs text-gray-500">{province.capital}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-black text-drc-green">{(province.memberCount || 0).toLocaleString()}</p>
+                      <p className="text-sm font-black text-drc-blue">{(province.memberCount || 0).toLocaleString()}</p>
                       <p className="text-xs text-gray-400">membres</p>
                     </div>
                   </div>
@@ -309,16 +309,16 @@ export default function FounderDashboard() {
                   <div>
                     <div className="flex justify-between text-xs mb-1">
                       <span className="text-gray-500">Préparation électorale</span>
-                      <span className="font-semibold text-drc-green">{province.electionReadiness || 0}%</span>
+                      <span className="font-semibold text-drc-blue">{province.electionReadiness || 0}%</span>
                     </div>
                     <div className="w-full bg-gray-100 rounded-full h-2">
                       <div
-                        className="h-2 bg-drc-green rounded-full"
+                        className="h-2 bg-drc-blue rounded-full"
                         style={{ width: `${province.electionReadiness || 0}%` }}
                       />
                     </div>
                   </div>
-                  <Link href={`/dashboard/provincial?province=${province.id}`} className="mt-3 flex items-center gap-1 text-xs text-drc-green font-semibold hover:underline">
+                  <Link href={`/dashboard/provincial?province=${province.id}`} className="mt-3 flex items-center gap-1 text-xs text-drc-blue font-semibold hover:underline">
                     Tableau provincial <ChevronRight className="w-3 h-3" />
                   </Link>
                 </div>
@@ -330,11 +330,11 @@ export default function FounderDashboard() {
         {/* Candidates Tab */}
         {activeTab === 'candidates' && (
           <div className="space-y-6">
-            <div className="card bg-green-50 border-green-100">
+            <div className="card bg-blue-50 border-green-100">
               <div className="flex items-start gap-3">
-                <Brain className="w-6 h-6 text-drc-green mt-0.5 shrink-0" />
+                <Brain className="w-6 h-6 text-drc-blue mt-0.5 shrink-0" />
                 <div>
-                  <h3 className="font-bold text-drc-green-dark">Règle IA — Sélection des candidats</h3>
+                  <h3 className="font-bold text-drc-blue-dark">Règle IA — Sélection des candidats</h3>
                   <p className="text-sm text-gray-600 mt-1">
                     L&apos;IA propose uniquement 3 personnes par rôle. La décision finale appartient
                     aux organes du parti (comité local, provincial, direction nationale ou Président
@@ -353,7 +353,7 @@ export default function FounderDashboard() {
                       <span className="text-xs font-bold text-gray-500">{i + 1}e proposition — Secrétaire Général National</span>
                     </div>
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-drc-green flex items-center justify-center text-white font-bold text-sm shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-drc-blue flex items-center justify-center text-white font-bold text-sm shrink-0">
                         {member.firstName[0]}{member.lastName[0]}
                       </div>
                       <div>
@@ -370,7 +370,7 @@ export default function FounderDashboard() {
                     </div>
                     <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
                       <span className="text-xs text-gray-500">Score total IA</span>
-                      <span className="text-xl font-black text-drc-green">{score.total}/100</span>
+                      <span className="text-xl font-black text-drc-blue">{score.total}/100</span>
                     </div>
                   </div>
                 );
@@ -391,7 +391,7 @@ export default function FounderDashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { label: 'Recettes ce mois', value: `$${DEMO_STATS.monthlyRevenue.toLocaleString()}`, sub: 'USD collectés', color: 'text-emerald-600', icon: DollarSign },
-                { label: 'Membres cotisants', value: DEMO_STATS.activeContributors.toLocaleString(), sub: 'sur 36,870 membres', color: 'text-drc-green', icon: Users },
+                { label: 'Membres cotisants', value: DEMO_STATS.activeContributors.toLocaleString(), sub: 'sur 36,870 membres', color: 'text-drc-blue', icon: Users },
                 { label: 'Taux de cotisation', value: `${Math.round((DEMO_STATS.activeContributors / DEMO_STATS.totalMembers) * 100)}%`, sub: 'membres à jour', color: 'text-blue-600', icon: TrendingUp },
               ].map(stat => {
                 const Icon = stat.icon;
@@ -435,7 +435,7 @@ export default function FounderDashboard() {
                 ].map(item => (
                   <div key={item.label} className="bg-gray-50 rounded-lg p-3 text-center">
                     <p className="text-xs text-gray-500 mb-1">{item.label}</p>
-                    <p className="text-lg font-black text-drc-green">{item.value}</p>
+                    <p className="text-lg font-black text-drc-blue">{item.value}</p>
                   </div>
                 ))}
               </div>

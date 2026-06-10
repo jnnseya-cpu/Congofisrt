@@ -24,29 +24,29 @@ export default function LocalDashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-drc-green text-white">
+      <div className="bg-drc-blue text-white">
         <div className="flag-stripe" />
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center gap-2 mb-2 flex-wrap">
-            <Link href="/dashboard" className="text-green-200 text-sm hover:text-white">← National</Link>
-            <span className="text-green-400">/</span>
-            <Link href="/dashboard/provincial" className="text-green-200 text-sm hover:text-white">Provincial</Link>
-            <span className="text-green-400">/</span>
-            <span className="text-green-200 text-sm">Local</span>
+            <Link href="/dashboard" className="text-blue-200 text-sm hover:text-white">← National</Link>
+            <span className="text-blue-300">/</span>
+            <Link href="/dashboard/provincial" className="text-blue-200 text-sm hover:text-white">Provincial</Link>
+            <span className="text-blue-300">/</span>
+            <span className="text-blue-200 text-sm">Local</span>
           </div>
           <h1 className="text-2xl md:text-3xl font-black flex items-center gap-2">
             <MapPin className="w-7 h-7 text-drc-yellow" /> Cellule Locale — {LOCAL_INFO.name}
           </h1>
-          <p className="text-green-200 text-sm mt-1">{LOCAL_INFO.territory} · {LOCAL_INFO.province} · Vue Chef de Cellule</p>
+          <p className="text-blue-200 text-sm mt-1">{LOCAL_INFO.territory} · {LOCAL_INFO.province} · Vue Chef de Cellule</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Local Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="stat-card border-l-4 border-drc-green">
-            <Users className="w-5 h-5 text-drc-green" />
-            <p className="text-3xl font-black text-drc-green">{LOCAL_INFO.memberCount}</p>
+          <div className="stat-card border-l-4 border-drc-blue">
+            <Users className="w-5 h-5 text-drc-blue" />
+            <p className="text-3xl font-black text-drc-blue">{LOCAL_INFO.memberCount}</p>
             <p className="text-xs text-gray-400">Membres locaux</p>
           </div>
           <div className="stat-card border-l-4 border-green-500">
@@ -81,7 +81,7 @@ export default function LocalDashboardPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as typeof activeTab)}
                   className={`flex items-center gap-1.5 px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
-                    activeTab === tab.id ? 'border-drc-green text-drc-green bg-green-50' : 'border-transparent text-gray-600 hover:text-gray-900'
+                    activeTab === tab.id ? 'border-drc-blue text-drc-blue bg-blue-50' : 'border-transparent text-gray-600 hover:text-gray-900'
                   }`}
                 >
                   <Icon className="w-4 h-4" /> {tab.label}
@@ -114,7 +114,7 @@ export default function LocalDashboardPage() {
                     <tr key={member.id} className="border-b border-gray-50 hover:bg-gray-50">
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-full bg-drc-green text-white flex items-center justify-center text-xs font-bold shrink-0">
+                          <div className="w-8 h-8 rounded-full bg-drc-blue text-white flex items-center justify-center text-xs font-bold shrink-0">
                             {member.firstName[0]}{member.lastName[0]}
                           </div>
                           <div>
@@ -130,7 +130,7 @@ export default function LocalDashboardPage() {
                       <td className="py-3 px-4 hidden md:table-cell">
                         <div className="flex items-center gap-2">
                           <div className="flex-1 bg-gray-100 rounded-full h-2 w-16">
-                            <div className="h-2 rounded-full bg-drc-green" style={{ width: `${member.trainingCompletion}%` }} />
+                            <div className="h-2 rounded-full bg-drc-blue" style={{ width: `${member.trainingCompletion}%` }} />
                           </div>
                           <span className="text-xs text-gray-500">{member.trainingCompletion}%</span>
                         </div>
@@ -158,7 +158,7 @@ export default function LocalDashboardPage() {
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-white text-xs font-bold ${
                     activity.type === 'Réunion' ? 'bg-blue-500' :
                     activity.type === 'Formation' ? 'bg-purple-500' :
-                    activity.type === 'Inscription' ? 'bg-drc-green' :
+                    activity.type === 'Inscription' ? 'bg-drc-blue' :
                     activity.type === 'Cotisation' ? 'bg-yellow-500' : 'bg-pink-500'
                   }`}>
                     {activity.type[0]}
@@ -168,7 +168,7 @@ export default function LocalDashboardPage() {
                     <p className="text-xs text-gray-500 truncate">{activity.desc}</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="text-xs font-bold text-drc-green">{activity.participants} pers.</p>
+                    <p className="text-xs font-bold text-drc-blue">{activity.participants} pers.</p>
                     <p className="text-xs text-gray-400">{new Date(activity.date).toLocaleDateString('fr-FR')}</p>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function LocalDashboardPage() {
                   </div>
                   <p className="text-sm text-gray-700 flex-1">{item.need}</p>
                   <div className="text-right shrink-0">
-                    <p className="text-sm font-bold text-drc-green">{item.votes}</p>
+                    <p className="text-sm font-bold text-drc-blue">{item.votes}</p>
                     <p className="text-xs text-gray-400">voix</p>
                   </div>
                 </div>
