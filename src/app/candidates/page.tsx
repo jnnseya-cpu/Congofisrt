@@ -80,7 +80,7 @@ export default function CandidatesPage() {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <Brain className="w-5 h-5 text-drc-blue" />
-                <span className="text-drc-blue text-sm font-semibold">Le Congo D'Abord — Agent de Sélection</span>
+                <span className="text-drc-blue text-sm font-semibold">Le Congo D’Abord — Agent de Sélection</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-black text-gray-900">Recommandations IA — Candidats</h1>
               <p className="text-gray-500 text-sm mt-1">
@@ -182,7 +182,7 @@ export default function CandidatesPage() {
               </h2>
               <div className="ml-auto flex items-center gap-1 text-xs text-gray-500">
                 <CheckCircle className="w-3 h-3 text-green-500" />
-                Généré par Le Congo D'Abord
+                Généré par Le Congo D’Abord
               </div>
             </div>
 

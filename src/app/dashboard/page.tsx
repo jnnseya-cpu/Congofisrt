@@ -112,10 +112,10 @@ export default function FounderDashboard() {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <Shield className="w-5 h-5 text-drc-yellow" />
-                <span className="text-drc-yellow text-sm font-semibold">Le Congo D'Abord — Tableau de bord Présidentiel</span>
+                <span className="text-drc-yellow text-sm font-semibold">Le Congo D’Abord — Tableau de bord Présidentiel</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-black">Bienvenue, Mr Justin Nseya</h1>
-              <p className="text-blue-200 text-sm mt-1">Fondateur &amp; Président — Le Congo DCongo D&apos;Abordapos;Abord</p>
+              <p className="text-blue-200 text-sm mt-1">Fondateur &amp; Président — Le Congo D'Abord</p>
             </div>
             <div className="hidden md:block text-right">
               <p className="text-blue-200 text-xs">Rapport généré le</p>

@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const systemPrompt = `Tu es ${agentName}, un agent IA spécialisé du système Le Congo D'Abord du parti politique "Le Congo D'Abord" en République Démocratique du Congo.
+    const systemPrompt = `Tu es ${agentName}, un agent IA spécialisé du système Le Congo D’Abord du parti politique "Le Congo D'Abord" en République Démocratique du Congo.
 
 Le parti est fondé par Mr Justin Nseya, Président et Fondateur. Il est le premier parti politique congolais assisté par intelligence artificielle.
 

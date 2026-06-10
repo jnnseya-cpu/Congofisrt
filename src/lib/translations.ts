@@ -33,7 +33,7 @@ export const translations: AllTranslations = {
     'nav.logout': 'Déconnexion',
 
     // Hero Section
-    'hero.title': "Le Congo D'Abord",
+    'hero.title': "Le Congo D’Abord",
     'hero.subtitle': "Le premier parti politique congolais dirigé par des citoyens, renforcé par l'intelligence artificielle",
     'hero.cta': 'Rejoindre le Mouvement',
     'hero.cta2': 'Découvrir la Plateforme',
@@ -44,7 +44,7 @@ export const translations: AllTranslations = {
     'hero.agents': 'Agents IA actifs',
 
     // Party Info
-    'party.name': "Le Congo D'Abord",
+    'party.name': "Le Congo D’Abord",
     'party.acronym': 'CDP',
     'party.system': 'Le Congo D’Abord',
     'party.founder': 'Fondateur & Président',
@@ -52,7 +52,7 @@ export const translations: AllTranslations = {
     'party.tagline': "Le parti du peuple congolais, propulsé par l'IA",
 
     // Registration
-    'register.title': "Inscription au Parti Le Congo D'Abord",
+    'register.title': "Inscription au Parti Le Congo D’Abord",
     'register.subtitle': 'Rejoignez le mouvement citoyen pour un Congo meilleur',
     'register.step1': 'Identité',
     'register.step2': 'Localisation',
@@ -193,7 +193,7 @@ export const translations: AllTranslations = {
     'common.required': 'Obligatoire',
 
     // Slogans
-    'slogan.main': "Le Congo D'Abord — Le peuple d'abord, toujours le peuple !",
+    'slogan.main': "Le Congo D’Abord — Le peuple d'abord, toujours le peuple !",
     'slogan.unity': 'Unis pour un Congo fort et prospère',
     'slogan.ai': "L'intelligence artificielle au service du peuple congolais",
     'slogan.democracy': 'Démocratie, Transparence, Intégrité',
@@ -231,14 +231,14 @@ export const translations: AllTranslations = {
     'hero.candidates': 'Bato bazali boyokani',
     'hero.agents': 'Bagents ya IA',
 
-    'party.name': "Le Congo D'Abord",
+    'party.name': "Le Congo D’Abord",
     'party.acronym': 'CDP',
     'party.system': 'Le Congo D’Abord',
     'party.founder': 'Mopanzi na Mokonzi',
     'party.founder.name': 'Justin Nseya',
     'party.tagline': "Parti ya bato ya Kongo, na lisalisi ya IA",
 
-    'register.title': "Kotiyama na Parti Le Congo D'Abord",
+    'register.title': "Kotiyama na Parti Le Congo D’Abord",
     'register.subtitle': 'Yaka na boyokani ya bato mpo na Kongo elamu',
     'register.step1': 'Kombo',
     'register.step2': 'Esika',
@@ -293,7 +293,7 @@ export const translations: AllTranslations = {
     'dashboard.recentActivity': 'Misala ya sika',
     'dashboard.aiInsights': 'Mayele ya IA',
 
-    'slogan.main': "Le Congo D'Abord — Bato liboso, ntango nyonso bato!",
+    'slogan.main': "Le Congo D’Abord — Bato liboso, ntango nyonso bato!",
     'slogan.unity': 'Boyokani mpo na Kongo makasi mpe na esengo',
     'slogan.ai': 'Intelligence artificielle mpo na lisalisi ya bato ya Kongo',
     'slogan.democracy': 'Democratie, Paminyo, Bosembo',
@@ -342,14 +342,14 @@ export const translations: AllTranslations = {
     'hero.candidates': 'Bantu bazolwa',
     'hero.agents': 'Bagent ya IA',
 
-    'party.name': "Le Congo D'Abord",
+    'party.name': "Le Congo D’Abord",
     'party.acronym': 'CDP',
     'party.system': 'Le Congo D’Abord',
     'party.founder': 'Fundisi ye Mfumu',
     'party.founder.name': 'Justin Nseya',
     'party.tagline': "Parti ya bantu ya Kongo, bambikisa ya IA",
 
-    'register.title': "Lemba na Parti Le Congo D'Abord",
+    'register.title': "Lemba na Parti Le Congo D’Abord",
     'register.subtitle': 'Songa kwa ntumba ya bantu mpu Kongo elamu',
     'register.step1': 'Nkumbu',
     'register.step2': 'Esika',
@@ -404,7 +404,7 @@ export const translations: AllTranslations = {
     'dashboard.recentActivity': 'Misalu ya sika',
     'dashboard.aiInsights': 'Ngangu ya IA',
 
-    'slogan.main': "Le Congo D'Abord — Bantu ya disu, ntangu yonso bantu!",
+    'slogan.main': "Le Congo D’Abord — Bantu ya disu, ntangu yonso bantu!",
     'slogan.unity': 'Kukondama mpu Kongo makasi ye mpamba',
     'slogan.ai': 'IA mpu kisalu ya bantu ya Kongo',
     'slogan.democracy': 'Democratie, Paminyo, Luzitu',
@@ -453,14 +453,14 @@ export const translations: AllTranslations = {
     'hero.candidates': 'Bantu basonjola',
     'hero.agents': 'Bagent ya IA',
 
-    'party.name': "Le Congo D'Abord",
+    'party.name': "Le Congo D’Abord",
     'party.acronym': 'CDP',
     'party.system': 'Le Congo D’Abord',
     'party.founder': 'Mufundi ne Muena Buena',
     'party.founder.name': 'Justin Nseya',
     'party.tagline': "Paati wa bantu ba Kongo, bambikishabu ya IA",
 
-    'register.title': "Longolola na Paati Le Congo D'Abord",
+    'register.title': "Longolola na Paati Le Congo D’Abord",
     'register.subtitle': 'Ijila bidimu bya bantu mpo Kongo elamu',
     'register.step1': 'Dijina',
     'register.step2': 'Enyi',
@@ -515,7 +515,7 @@ export const translations: AllTranslations = {
     'dashboard.recentActivity': 'Misalu ya sika',
     'dashboard.aiInsights': 'Buakane bwa IA',
 
-    'slogan.main': "Le Congo D'Abord — Bantu ba dibue, ntangu yonso bantu!",
+    'slogan.main': "Le Congo D’Abord — Bantu ba dibue, ntangu yonso bantu!",
     'slogan.unity': 'Kumangana mpo Kongo wa makasi ne mfumu',
     'slogan.ai': 'IA mpo buakane bwa bantu ba Kongo',
     'slogan.democracy': 'Democratie, Paminyo, Busunga',
@@ -564,14 +564,14 @@ export const translations: AllTranslations = {
     'hero.candidates': 'Wagombezi wanaostahili',
     'hero.agents': 'Mawakala ya AI yanayofanya kazi',
 
-    'party.name': "Le Congo D'Abord",
+    'party.name': "Le Congo D’Abord",
     'party.acronym': 'CDP',
     'party.system': 'Le Congo D’Abord',
     'party.founder': 'Mwanzilishi na Rais',
     'party.founder.name': 'Justin Nseya',
     'party.tagline': "Chama cha wananchi wa Kongo, kinachosaidiwa na AI",
 
-    'register.title': "Jisajili katika Chama cha Le Congo D'Abord",
+    'register.title': "Jisajili katika Chama cha Le Congo D’Abord",
     'register.subtitle': 'Jiunge na harakati ya wananchi kwa Kongo bora',
     'register.step1': 'Utambulisho',
     'register.step2': 'Mahali',
@@ -626,7 +626,7 @@ export const translations: AllTranslations = {
     'dashboard.recentActivity': 'Shughuli za hivi karibuni',
     'dashboard.aiInsights': 'Maarifa ya AI',
 
-    'slogan.main': "Le Congo D'Abord — Wananchi kwanza, daima wananchi!",
+    'slogan.main': "Le Congo D’Abord — Wananchi kwanza, daima wananchi!",
     'slogan.unity': 'Umoja kwa Kongo yenye nguvu na ustawi',
     'slogan.ai': 'Akili bandia kwa ajili ya wananchi wa Kongo',
     'slogan.democracy': 'Demokrasia, Uwazi, Uadilifu',

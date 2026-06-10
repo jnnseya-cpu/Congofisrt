@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={language}>
       <head>
-        <title>Le Congo DCongo D&apos;Abordapos;Abord — Le Congo D'Abord</title>
+        <title>Le Congo D’Abord</title>
         <meta name="description" content="Le premier parti politique congolais renforcé par l'intelligence artificielle" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="flag-stripe" />
           <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-drc-yellow font-bold text-lg mb-3">Le Congo DCongo D&apos;Abordapos;Abord</h3>
+              <h3 className="text-drc-yellow font-bold text-lg mb-3">Le Congo D’Abord</h3>
               <p className="text-blue-200 text-sm leading-relaxed">
                 Le premier parti politique congolais dirigé par des citoyens,
                 renforcé par l&apos;intelligence artificielle.
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
           <div className="border-t border-green-800 text-center py-4 text-blue-300 text-xs">
-            © 2025 Le Congo DCongo D&apos;Abordapos;Abord — Le Congo D'Abord. Tous droits réservés.
+            © 2025 Le Congo D'Abord. Tous droits réservés.
           </div>
         </footer>
       </body>

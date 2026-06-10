@@ -66,7 +66,7 @@ export default function ContributionsPage() {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <DollarSign className="w-5 h-5 text-drc-blue" />
-                <span className="text-drc-blue text-sm font-semibold">Le Congo D'Abord — Agent Financier</span>
+                <span className="text-drc-blue text-sm font-semibold">Le Congo D’Abord — Agent Financier</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-black text-gray-900">Gestion des Cotisations</h1>
               <p className="text-gray-500 text-sm mt-1">
@@ -266,7 +266,7 @@ export default function ContributionsPage() {
                 <div>
                   <h3 className="font-bold text-drc-blue-dark">Tableau de bord de transparence financière</h3>
                   <p className="text-sm text-gray-600 mt-1">
-                    Le Congo DCongo D&apos;Abordapos;Abord s&apos;engage à une totale transparence sur les finances du parti.
+                    Le Congo D’Abord s&apos;engage à une totale transparence sur les finances du parti.
                     Ce tableau est accessible au public. Les données financières individuelles restent strictement privées.
                   </p>
                 </div>

@@ -68,7 +68,7 @@ export default function LandingPage() {
             {/* Party badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <Shield className="w-4 h-4 text-drc-yellow" />
-              <span className="text-sm font-semibold text-drc-yellow">Le Congo D'Abord</span>
+              <span className="text-sm font-semibold text-drc-yellow">Le Congo D’Abord</span>
               <span className="text-white/60 text-sm">•</span>
               <span className="text-sm text-white/80">Système Intelligent du Parti</span>
             </div>
@@ -76,7 +76,7 @@ export default function LandingPage() {
             {/* Party Name */}
             <h1 className="text-5xl md:text-7xl font-black mb-4 leading-tight">
               <span className="text-white">Congo</span>{' '}
-              <span className="text-drc-yellow">D&apos;Abord</span>
+              <span className="text-drc-yellow">D'Abord</span>
             </h1>
 
             {/* Tagline */}
@@ -198,7 +198,7 @@ export default function LandingPage() {
               </div>
               <h2 className="section-title">Du Village à la Présidence</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Le Le Congo DCongo D&apos;Abordapos;Abord est structuré à travers les 26 provinces de la RDC, de Kinshasa
+                Le Congo D’Abord est structuré à travers les 26 provinces de la RDC, de Kinshasa
                 à Haut-Katanga, couvrant chaque territoire, commune, secteur, chefferie, groupement et village.
               </p>
 
