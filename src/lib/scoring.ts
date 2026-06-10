@@ -1,4 +1,4 @@
-// CDP-AI OS — Candidate Scoring Formula
+// Le Congo D'Abord — Candidate Scoring Formula
 // Total Score = (Education × 0.15) + (WorkExperience × 0.20) + (LocalCredibility × 0.15)
 //             + (Leadership × 0.15) + (ContributionStatus × 0.10) + (TrainingCompletion × 0.10)
 //             + (IntegrityScore × 0.10) + (LanguageAbility × 0.05)

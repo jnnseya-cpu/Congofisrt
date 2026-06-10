@@ -1,4 +1,4 @@
-// CDP-AI OS — Mock/Demo Data for UI rendering
+// Le Congo D'Abord — Mock/Demo Data for UI rendering
 
 import { Member, AIRecommendation, Contribution, TrainingModule, EthicsCase, InfrastructureNeed, PolicyProposal, DashboardStats } from './types';
 

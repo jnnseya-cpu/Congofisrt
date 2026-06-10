@@ -145,7 +145,7 @@ export default function RegisterPage() {
           </div>
           <h2 className="text-3xl font-black text-gray-900 mb-3">Inscription réussie !</h2>
           <p className="text-gray-600 mb-2">
-            <strong>{form.firstName} {form.lastName}</strong>, bienvenue dans le mouvement <strong>Congo D'Abord</strong> !
+            <strong>{form.firstName} {form.lastName}</strong>, bienvenue dans le mouvement <strong>Le Congo D'Abord</strong> !
           </p>
           <p className="text-gray-500 text-sm mb-6">
             Votre dossier a été transmis à votre coordinateur local. Vous recevrez une confirmation par email à <strong>{form.email}</strong>.
@@ -174,7 +174,7 @@ export default function RegisterPage() {
       <div className="bg-drc-blue text-white py-8">
         <div className="flag-stripe -mt-8 mb-0" />
         <div className="max-w-4xl mx-auto px-4 pt-8 text-center">
-          <h1 className="text-3xl font-black mb-2">Inscription — Congo D'Abord</h1>
+          <h1 className="text-3xl font-black mb-2">Inscription — Le Congo D'Abord</h1>
           <p className="text-blue-200">Rejoignez le mouvement citoyen pour un Congo meilleur</p>
         </div>
       </div>
@@ -535,7 +535,7 @@ export default function RegisterPage() {
                   className="mt-0.5 text-drc-blue"
                 />
                 <span className="text-sm text-gray-700">
-                  J'accepte les conditions d'adhésion au parti Congo D'Abord, je comprends l'obligation de cotisation mensuelle de $5 USD
+                  J'accepte les conditions d'adhésion au parti Le Congo D'Abord, je comprends l'obligation de cotisation mensuelle de $5 USD
                   et je m'engage à respecter la Charte d'éthique et d'intégrité du parti.
                 </span>
               </label>

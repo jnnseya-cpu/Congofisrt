@@ -217,7 +217,7 @@ export default function EthicsPage() {
                   <Shield className="w-8 h-8 text-drc-yellow" />
                 </div>
                 <h2 className="text-2xl font-black text-gray-900">Charte d'Éthique et d'Intégrité</h2>
-                <p className="text-gray-500 mt-1">Congo D'Abord — CDP</p>
+                <p className="text-gray-500 mt-1">Le Congo D'Abord — CDP</p>
               </div>
 
               <div className="space-y-6">
@@ -257,7 +257,7 @@ export default function EthicsPage() {
               <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-green-200 text-center">
                 <p className="text-drc-blue font-bold">Signé et approuvé par</p>
                 <p className="text-gray-900 font-black text-lg mt-1">Mr Justin Nseya</p>
-                <p className="text-gray-500 text-sm">Fondateur & Président — Congo D'Abord</p>
+                <p className="text-gray-500 text-sm">Fondateur & Président — Le Congo D'Abord</p>
               </div>
             </div>
           </div>

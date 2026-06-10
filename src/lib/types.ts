@@ -1,4 +1,4 @@
-// CDP-AI OS — TypeScript types
+// Le Congo D'Abord — TypeScript types
 
 // Re-export Language from translations to avoid duplication
 import type { Language } from './translations';

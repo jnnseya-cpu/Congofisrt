@@ -1,4 +1,4 @@
-// CDP-AI OS — All 26 DRC Provinces with territories data
+// Le Congo D'Abord — All 26 DRC Provinces with territories data
 
 import { Province, Territory } from './types';
 

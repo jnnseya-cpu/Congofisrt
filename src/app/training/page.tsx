@@ -67,7 +67,7 @@ const TRAINING_MODULES = [
   },
   {
     id: 13, category: 'Numérique', title: 'Sécurité numérique',
-    desc: 'Protection des données du parti, cybersécurité de base, utilisation sécurisée du CDP-AI OS.',
+    desc: 'Protection des données du parti, cybersécurité de base, utilisation sécurisée du Le Congo D’Abord.',
     duration: 2, level: 'Basique', required: false, completed: false, score: null,
   },
   {
@@ -112,9 +112,9 @@ export default function TrainingPage() {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <Award className="w-5 h-5 text-drc-yellow" />
-                <span className="text-drc-yellow text-sm font-semibold">CDP-AI OS — Académie Politique</span>
+                <span className="text-drc-yellow text-sm font-semibold">Le Congo D'Abord — Académie Politique</span>
               </div>
-              <h1 className="text-2xl md:text-3xl font-black">Académie Politique Congo D&apos;Abord</h1>
+              <h1 className="text-2xl md:text-3xl font-black">Académie Politique Le Congo DCongo D&apos;Abordapos;Abord</h1>
               <p className="text-blue-200 text-sm mt-1">Formation des futurs dirigeants congolais — 14 modules certifiants</p>
             </div>
             <button onClick={() => setShowAI(!showAI)} className="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium border border-white/20 transition-all">
@@ -195,7 +195,7 @@ export default function TrainingPage() {
                   <p className="text-xs font-bold text-yellow-800">Certificat CDP</p>
                 </div>
                 <p className="text-xs text-gray-600">
-                  Complétez tous les modules obligatoires pour obtenir votre certificat de leadership CDP-AI OS,
+                  Complétez tous les modules obligatoires pour obtenir votre certificat de leadership Le Congo D'Abord,
                   requis pour les nominations aux postes de niveau provincial et national.
                 </p>
               </div>

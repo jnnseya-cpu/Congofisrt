@@ -24,7 +24,7 @@ export default function AIAgentPanel({
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: `Bonjour ! Je suis l'${agentName} du CDP-AI OS. ${agentDescription} Comment puis-je vous aider aujourd'hui ?`,
+      content: `Bonjour ! Je suis l'${agentName} du Le Congo D'Abord. ${agentDescription} Comment puis-je vous aider aujourd'hui ?`,
       timestamp: new Date(),
     },
   ]);
@@ -169,5 +169,5 @@ function getDemoResponse(agentName: string, question: string): string {
     return `Le Congo D'Abord est structuré sur 7 niveaux :\n\n1. **National** — Direction nationale, Mr Justin Nseya\n2. **Provincial** — 26 provinces\n3. **Territoire/Ville** — 145 territoires, 33 villes\n4. **Commune/Secteur/Chefferie**\n5. **Quartier/Groupement**\n6. **Cellule/Village** — niveau de base\n7. **Diaspora** — Afrique, Europe, Amériques, Asie...\n\nChaque membre est géolocalisé dans cette hiérarchie.`;
   }
 
-  return `Merci pour votre question. En tant que ${agentName}, voici ma réponse :\n\nLe CDP-AI OS s'appuie sur 12 agents spécialisés pour gérer chaque aspect du parti Congo D'Abord. Chaque décision importante reste entre les mains des organes humains du parti — l'IA propose, les humains décident.\n\nPour des informations spécifiques, n'hésitez pas à consulter les différentes sections de la plateforme ou à contacter la direction provinciale la plus proche.`;
+  return `Merci pour votre question. En tant que ${agentName}, voici ma réponse :\n\nLe Congo D'Abord s'appuie sur 12 agents spécialisés pour gérer chaque aspect du parti Le Congo D'Abord. Chaque décision importante reste entre les mains des organes humains du parti — l'IA propose, les humains décident.\n\nPour des informations spécifiques, n'hésitez pas à consulter les différentes sections de la plateforme ou à contacter la direction provinciale la plus proche.`;
 }

@@ -39,8 +39,8 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
               <Shield className="w-5 h-5 text-drc-yellow" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-black text-drc-blue text-lg leading-none block">Congo D&apos;Abord</span>
-              <span className="text-xs text-gray-500 font-medium leading-none">CDP-AI OS</span>
+              <span className="font-black text-drc-blue text-lg leading-none block">Le Congo DCongo D&apos;Abordapos;Abord</span>
+              <span className="text-xs text-gray-500 font-medium leading-none">Le Congo D'Abord</span>
             </div>
           </Link>
 
