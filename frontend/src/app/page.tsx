@@ -210,6 +210,40 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ===== SNTO PROMO ===== */}
+      <section className="py-16 bg-drc-blue-dark text-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-drc-yellow text-drc-blue-dark px-4 py-2 rounded-full text-sm font-black mb-4">
+              NOUVEAU — Système National de Transformation Opérationnel
+            </div>
+            <h2 className="text-2xl font-black mb-3">Manifeste → Programme → Projets → Livraison → Résultats</h2>
+            <p className="text-blue-200 max-w-2xl mx-auto">
+              11 agents IA convertissent chaque promesse électorale en projets nationaux financables,
+              suivis, évalués et présentés aux électeurs avec transparence totale.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {[
+              { n: '11', label: 'Agents SNTO' },
+              { n: '156', label: 'Projets nationaux' },
+              { n: '26', label: 'Provinces couvertes' },
+              { n: '10 ans', label: 'Feuille de route' },
+            ].map(s => (
+              <div key={s.label} className="bg-white/10 rounded-xl p-4 text-center">
+                <p className="text-2xl font-black text-drc-yellow">{s.n}</p>
+                <p className="text-blue-200 text-sm">{s.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <a href="/projects" className="inline-flex items-center gap-2 bg-drc-yellow text-drc-blue-dark font-black px-6 py-3 rounded-xl hover:bg-yellow-300 transition-colors">
+              Explorer le SNTO →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ===== STRUCTURE ===== */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">

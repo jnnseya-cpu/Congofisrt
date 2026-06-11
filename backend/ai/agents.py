@@ -103,6 +103,62 @@ def run_agent(agent_type: str, context: str, payload: Dict[str, Any]) -> Dict[st
             "description": "Calcule l'indice de préparation électorale",
             "instruction": "Calcule et présente l'indice de préparation électorale global et par province basé sur: couverture géographique, taux de cotisation, nombre de candidats qualifiés, taux de formation, présence de leadership à tous niveaux. Donne un score sur 100 et un plan d'action pour les zones faibles.",
         },
+        # SNTO — 11 National Transformation OS Agents
+        "SNTO-manifesto-architect": {
+            "name": "Architecte du Manifeste IA",
+            "description": "Transforme la vision politique en programmes nationaux exécutables",
+            "instruction": "Transforme la vision ou promesse politique soumise en un Programme National structuré incluant: objectifs SMART, KPIs mesurables, budget estimé (3 scénarios), timeline 5 ans, ministères impliqués, risques et mitigations. Ancre tout dans le contexte spécifique de la RDC.",
+        },
+        "SNTO-project-designer": {
+            "name": "Concepteur de Projets IA",
+            "description": "Convertit les promesses en projets concrets et financables",
+            "instruction": "Décompose la promesse ou le défi soumis en 4-6 projets concrets. Pour chaque projet: nom, portée, coût estimé, bénéficiaires, province(s) ciblée(s), timeline, risques majeurs, stratégie d'approvisionnement. Utilise les meilleures pratiques de développement africain.",
+        },
+        "SNTO-project-breakdown": {
+            "name": "Décomposition de Projets IA",
+            "description": "Crée la structure WBS complète",
+            "instruction": "Crée la structure de décomposition du travail (WBS) complète pour le projet soumis avec 6 phases standard (Faisabilité, Financement, Approvisionnement, Construction, Mise en service, Opérations). Pour chaque phase: tâches détaillées, durée, coût, responsable, dépendances. Calcule le chemin critique.",
+        },
+        "SNTO-national-costing": {
+            "name": "Costing National IA",
+            "description": "Produit des estimations financières détaillées",
+            "instruction": "Produis une estimation financière complète pour le projet soumis: CAPEX (construction, équipements, technologie, supervision), OPEX annuel (RH, maintenance, opérations), structure de financement recommandée (État, BAD, BM, PPP), 3 scénarios (bas/moyen/haut), ROI social et seuil de rentabilité.",
+        },
+        "SNTO-funding-matchmaker": {
+            "name": "Courtier en Financement IA",
+            "description": "Identifie et classe les bailleurs de fonds adaptés",
+            "instruction": "Pour le projet soumis, identifie et classe les 5 meilleures sources de financement parmi: Banque Mondiale/IDA, BAD/FAD, FMI, UE/NDICI, Fonds Vert Climat, China Exim Bank, USAID/MCC, Impact Funds, capital privé. Pour chaque bailleur: score de compatibilité/100, montant potentiel, conditions, délai d'approbation. Calcule la probabilité globale d'obtention.",
+        },
+        "SNTO-delivery-structure": {
+            "name": "Structure de Livraison IA",
+            "description": "Conçoit la gouvernance complète du projet",
+            "instruction": "Conçois la structure de gouvernance complète pour le projet soumis avec 7 niveaux: Responsable Politique (parti), Responsable Ministériel, Expert Technique, Responsable Provincial, Responsable Communautaire, Unité PMO, Supervision Indépendante. Pour chaque rôle: profil requis, responsabilités, mécanisme de reporting.",
+        },
+        "SNTO-talent-assignment": {
+            "name": "Affectation des Talents IA",
+            "description": "Trouve le meilleur profil membre pour chaque poste",
+            "instruction": "Pour le poste de leadership soumis, génère le profil idéal et propose un Top 3 de candidats fictifs représentatifs de la base membres CDP avec scores détaillés (éducation, expérience sectorielle, province, leadership, cotisation, intégrité). Recommande aussi l'équipe complète autour du responsable principal.",
+        },
+        "SNTO-impact-forecast": {
+            "name": "Prévision d'Impact IA",
+            "description": "Prédit l'impact socioéconomique et électoral",
+            "instruction": "Pour le projet soumis, produis une prévision d'impact complète sur 5 ans: contribution au PIB, emplois créés (directs, indirects, jeunes formés), revenus fiscaux générés, bénéficiaires directs, réduction pauvreté (%), impact sur l'approbation électorale (+points). Calcule un score d'impact global /100.",
+        },
+        "SNTO-project-replication": {
+            "name": "Réplication de Projets IA",
+            "description": "Duplique les succès vers des provinces similaires",
+            "instruction": "Pour le projet pilote réussi soumis, identifie les 4-5 provinces aux conditions les plus similaires (géographie, démographie, économie) et propose un plan de réplication pour chaque: score de compatibilité, adaptations nécessaires, coût de réplication (avec économies d'échelle), timeline. Calcule le score de réplicabilité global.",
+        },
+        "SNTO-development-strategist": {
+            "name": "Stratège de Développement IA",
+            "description": "Génère continuellement de nouveaux projets nationaux",
+            "instruction": "Pour le secteur ou la province soumis, génère 5 projets de développement innovants et stratégiques adaptés à la RDC. Pour chaque projet: concept, secteur, impact estimé (emplois, revenus), timeline, type de financement recommandé. Priorise les projets à fort effet multiplicateur sur l'économie congolaise.",
+        },
+        "SNTO-second-term": {
+            "name": "Planification 2e Mandat IA",
+            "description": "Alloue les projets entre 1er et 2e mandat sur 10 ans",
+            "instruction": "Pour le projet ou portefeuille soumis, détermine l'allocation optimale entre 1er mandat (Années 1-5: fondations) et 2e mandat (Années 6-10: industrialisation avancée) selon 4 critères pondérés: faisabilité institutionnelle (25%), financement disponible (25%), capacité d'exécution (25%), impact électoral immédiat (25%). Justifie chaque décision d'allocation.",
+        },
     }
 
     config = agent_configs.get(agent_type, {
