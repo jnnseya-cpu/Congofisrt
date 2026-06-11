@@ -1,0 +1,16 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/agents/chat/route": "app/api/agents/chat/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/candidates/page": "app/candidates/page.js",
+  "/contributions/page": "app/contributions/page.js",
+  "/dashboard/local/page": "app/dashboard/local/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/ethics/page": "app/ethics/page.js",
+  "/dashboard/provincial/page": "app/dashboard/provincial/page.js",
+  "/infrastructure/page": "app/infrastructure/page.js",
+  "/policy/page": "app/policy/page.js",
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js",
+  "/training/page": "app/training/page.js"
+}

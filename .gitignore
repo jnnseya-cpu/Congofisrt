@@ -1,10 +1,19 @@
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/package-lock.json
+frontend/.env.local
+frontend/.env
+
+# Backend
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+
+# Root
 node_modules/
-package-lock.json
-.next/
-*.pyc
-__pycache__/
-.env.local
 .env
+.env.local
 dist/
 build/
 *.egg-info/
