@@ -1,0 +1,20 @@
+services:
+  veryx:
+    build: .
+    container_name: veryx-ai-os
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "file:/data/veryx.db"
+      VERYX_JWT_SECRET: ${VERYX_JWT_SECRET:-change-me-in-production-32-chars-min}
+      BITRIPAY_MODE: ${BITRIPAY_MODE:-sandbox}
+      BITRIPAY_WEBHOOK_SECRET: ${BITRIPAY_WEBHOOK_SECRET:-vx_sandbox_webhook_secret_rotate_me}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+    volumes:
+      - veryx_data:/data
+
+volumes:
+  veryx_data:
+    name: veryx_data
