@@ -1,0 +1,587 @@
+// ─────────────────────────────────────────────────────────────────────────
+// VERYX AI-OS — Unified data model
+//
+// Combines:
+//   • Blueprint §10 (Identity, Payments, Agent/AI, Compliance/Audit tables)
+//   • Domain Coverage "Unified Data Model" (portfolios → programmes → projects
+//     → tasks, risks, documents, assets, vendors, ESG, product backlog …)
+//   • Section 23 dashboard support (recommendations, threats, workflows, plans)
+//
+// Local dev uses SQLite for zero-config running. The spec's production target
+// is PostgreSQL 16 (Blueprint §9.4): switch `provider` to "postgresql", point
+// DATABASE_URL at your cluster, and (optionally) promote String/JSON columns to
+// native enum/jsonb types. Enums, arrays and Json are modelled as String here
+// because SQLite does not support them natively.
+// ─────────────────────────────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ── Core identity & access (Blueprint §10.1) ────────────────────────────────
+
+model Tenant {
+  id                String   @id @default(cuid())
+  name              String
+  slug              String   @unique
+  planId            String? // FK → SubscriptionPlan
+  billingEmail      String?
+  countryCode       String   @default("GB") // ISO 3166-1 alpha-2
+  kybStatus         String   @default("pending") // pending|in_review|approved|rejected|expired
+  kybVerifiedAt     DateTime?
+  acuBalance        Float    @default(0) // current ACU credit balance
+  bitripayMerchantId String?
+  tier              String   @default("growth") // starter|growth|pro|enterprise|sovereign
+  settings          String   @default("{}") // JSON blob
+  healthScore       Int      @default(80)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  deletedAt         DateTime?
+}
+
+model User {
+  id              String    @id @default(cuid())
+  tenantId        String?
+  email           String    @unique
+  passwordHash    String
+  firstName       String
+  lastName        String
+  role            String    @default("business_owner")
+  // super_admin|enterprise_admin|business_owner|team_member|developer|merchant|partner|consumer
+  status          String    @default("active") // active|suspended|pending_verification|deactivated
+  department      String?
+  mfaEnabled      Boolean   @default(false)
+  mfaSecret       String?
+  lastLoginAt     DateTime?
+  failedLoginCount Int      @default(0)
+  lockedUntil     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  deletedAt       DateTime?
+
+  @@index([tenantId])
+  @@index([role])
+}
+
+model ApiKey {
+  id          String    @id @default(cuid())
+  tenantId    String
+  userId      String
+  keyHash     String    @unique
+  keyPrefix   String // e.g. vx_live_abc1
+  environment String    @default("test") // test|production
+  permissions String    @default("[]") // JSON
+  lastUsedAt  DateTime?
+  expiresAt   DateTime?
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+
+  @@index([tenantId])
+}
+
+// ── Payments & financial (Blueprint §10.2, §7) ──────────────────────────────
+
+model Wallet {
+  id            String   @id @default(cuid())
+  ownerId       String
+  ownerType     String   @default("tenant") // user|merchant|tenant
+  currency      String   @default("GBP") // ISO 4217
+  balance       Float    @default(0)
+  frozenBalance Float    @default(0)
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([ownerId])
+}
+
+model Transaction {
+  id               String    @id @default(cuid())
+  tenantId         String
+  merchantId       String?
+  type             String    @default("payment") // payment|refund|transfer|settlement|fee|adjustment
+  status           String    @default("pending") // pending|processing|completed|failed|disputed|cancelled
+  amount           Float
+  currency         String    @default("GBP")
+  gateway          String    @default("bitripay") // bitripay|stripe|adyen|checkout|internal
+  channel          String? // card|mpesa|airtel|orange|africell|cdf_wallet|bank
+  gatewayReference String?
+  fraudScore       Int? // 0–100
+  customerId       String?
+  customerRef      String?
+  metadata         String    @default("{}") // JSON
+  idempotencyKey   String    @unique
+  createdAt        DateTime  @default(now())
+  completedAt      DateTime?
+
+  @@index([tenantId])
+  @@index([status])
+}
+
+model PaymentLink {
+  id          String    @id @default(cuid())
+  tenantId    String
+  amount      Float?
+  currency    String    @default("GBP")
+  description String?
+  url         String
+  qrCodeUrl   String?
+  status      String    @default("active") // active|expired|paid|cancelled
+  expiresAt   DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@index([tenantId])
+}
+
+// ── Agent & AI (Blueprint §10.3, §5) ────────────────────────────────────────
+
+model AgentExecution {
+  id            String    @id @default(cuid())
+  tenantId      String
+  agentType     String // e.g. ceo_agent
+  triggerType   String    @default("user_invoked") // scheduled|event|user_invoked|agent_chain
+  status        String    @default("queued") // queued|running|completed|failed|cancelled
+  inputPayload  String    @default("{}") // JSON
+  outputPayload String? // JSON
+  acuConsumed   Float     @default(0)
+  modelUsed     String?
+  tokensIn      Int?
+  tokensOut     Int?
+  durationMs    Int?
+  errorMessage  String?
+  traceId       String
+  createdAt     DateTime  @default(now())
+  completedAt   DateTime?
+
+  @@index([tenantId])
+  @@index([agentType])
+}
+
+// ── ACU economy (Blueprint §12.2, Section 23A.8) ────────────────────────────
+
+model AcuLedgerEntry {
+  id           String   @id @default(cuid())
+  tenantId     String
+  delta        Float // + purchase / − consumption
+  reason       String // e.g. "agent.ceo_agent" or "purchase.10000"
+  balanceAfter Float
+  refType      String? // execution|purchase|adjustment
+  refId        String?
+  createdAt    DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+// ── AI recommendation queue & insight cards (Section 23 Insight Card Format) ─
+
+model Recommendation {
+  id        String   @id @default(cuid())
+  tenantId  String? // null = platform-level (Super Admin)
+  scope     String   @default("business") // platform|business|project
+  agentType String?
+  title     String
+  detail    String
+  severity  String   @default("info") // info|low|medium|high
+  impact    String? // quantified impact statement
+  action    String? // "Act Now" pathway label
+  actionHref String?
+  confidence Int? // 0–100
+  status    String   @default("open") // open|acknowledged|actioned|dismissed
+  createdAt DateTime @default(now())
+
+  @@index([tenantId])
+  @@index([scope])
+}
+
+// ── Threat / alert surfaces (Section 23A.6, 23B.6, 23C.6) ───────────────────
+
+model ThreatAlert {
+  id         String   @id @default(cuid())
+  tenantId   String? // null = platform-level
+  scope      String   @default("platform") // platform|business|project
+  projectId  String?
+  type       String // e.g. "ACU Overconsumption Risk"
+  severity   String   @default("MEDIUM") // LOW|MEDIUM|HIGH
+  impact     String
+  action     String
+  owner      String   @default("platform")
+  status     String   @default("open") // open|reviewing|resolved
+  detectedAt DateTime @default(now())
+
+  @@index([scope])
+  @@index([tenantId])
+}
+
+// ── Business Operations workflows (Section 23B.3) ───────────────────────────
+
+model Workflow {
+  id             String   @id @default(cuid())
+  tenantId       String
+  name           String
+  status         String   @default("running") // running|paused|delayed|scheduled
+  mode           String   @default("auto") // auto|manual_step|scheduled|ai_assisted
+  costToday      Float    @default(0)
+  efficiencyScore Int     @default(90)
+  timeSavedHours Float    @default(0)
+  slaStatus      String   @default("on_track") // on_track|at_risk|breached
+  automationRate Int      @default(80)
+  errorRate      Float    @default(1.0)
+  createdAt      DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+// ── Subscription plans (Blueprint §12.1) ────────────────────────────────────
+
+model SubscriptionPlan {
+  id            String  @id @default(cuid())
+  name          String  @unique
+  monthlyPrice  Float
+  maxUsers      Int
+  maxAgents     Int
+  acuPerMonth   Int
+  apiCallsPerMonth Int
+  whiteLabel    Boolean @default(false)
+  slaUptime     String  @default("99.5%")
+  supportLevel  String  @default("Email")
+  sortOrder     Int     @default(0)
+}
+
+// ── Compliance & audit (Blueprint §10.4, §6.10) ─────────────────────────────
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  tenantId     String?
+  actorId      String?
+  actorType    String   @default("user") // user|agent|system|api_key
+  action       String // e.g. user.password.changed
+  resourceType String?
+  resourceId   String?
+  ipAddress    String?
+  userAgent    String?
+  justification String?
+  changes      String? // JSON before/after
+  hash         String // SHA-256 of this record
+  prevHash     String? // chain integrity
+  createdAt    DateTime @default(now())
+
+  @@index([tenantId])
+  @@index([action])
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// CROSS-DOMAIN ENTITIES — Domain Coverage §4.1–4.10 unified model
+// ═══════════════════════════════════════════════════════════════════════════
+
+model Portfolio {
+  id                 String   @id @default(cuid())
+  tenantId           String
+  name               String
+  strategicObjectives String  @default("[]") // JSON
+  budget             Float    @default(0)
+  currency           String   @default("GBP")
+  status             String   @default("active")
+  ownerId            String?
+  createdAt          DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+model Programme {
+  id              String   @id @default(cuid())
+  tenantId        String
+  portfolioId     String?
+  name            String
+  sponsorId       String?
+  programmeManager String?
+  budget          Float    @default(0)
+  status          String   @default("active")
+  alignmentScore  Int      @default(70)
+  createdAt       DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+model Project {
+  id             String   @id @default(cuid())
+  tenantId       String
+  programmeId    String?
+  code           String
+  name           String
+  type           String   @default("delivery")
+  methodology    String   @default("hybrid") // agile|waterfall|hybrid|safe
+  phase          String   @default("Execution") // Planning|Mobilisation|Execution|Closeout
+  location       String?
+  pmName         String?
+  healthRag      String   @default("amber") // green|amber|red
+  status         String   @default("on_track") // on_track|at_risk|delayed|critical
+  // Investment appraisal (§4.1.4)
+  npv            Float    @default(0)
+  irr            Float    @default(0)
+  alignmentScore Int      @default(70)
+  // Cost + EVM (§4.3.4)
+  budget         Float    @default(0)
+  actualCost     Float    @default(0)
+  plannedValue   Float    @default(0) // PV / BCWS
+  earnedValue    Float    @default(0) // EV / BCWP
+  forecastCost   Float    @default(0) // EAC
+  // Schedule
+  scheduleProgress Int    @default(0) // % complete
+  targetProgress Int      @default(0)
+  plannedStart   DateTime?
+  plannedFinish  DateTime?
+  createdAt      DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+model WorkPackage {
+  id             String   @id @default(cuid())
+  projectId      String
+  code           String
+  name           String
+  status         String   @default("active") // active|delayed|complete|suspended
+  progress       Int      @default(0)
+  budget         Float    @default(0)
+  costConsumed   Float    @default(0)
+  createdAt      DateTime @default(now())
+
+  @@index([projectId])
+}
+
+model Task {
+  id            String    @id @default(cuid())
+  projectId     String
+  parentId      String?
+  wbsCode       String
+  name          String
+  type          String    @default("task")
+  duration      Int       @default(1) // days
+  plannedStart  DateTime?
+  plannedFinish DateTime?
+  actualStart   DateTime?
+  actualFinish  DateTime?
+  percentComplete Int     @default(0)
+  criticalPath  Boolean   @default(false)
+  totalFloat    Int       @default(0)
+
+  @@index([projectId])
+}
+
+model Risk {
+  id                    String   @id @default(cuid())
+  tenantId              String
+  projectId             String?
+  title                 String
+  category              String   @default("technical") // schedule|cost|technical|external|organisational|legal
+  probability           Int      @default(3) // 1–5
+  impact                Int      @default(3) // 1–5
+  score                 Int      @default(9) // P × I
+  responseStrategy      String   @default("mitigate") // avoid|mitigate|transfer|accept
+  ownerId               String?
+  status                String   @default("open")
+  quantitativeCostImpact Float   @default(0)
+  createdAt             DateTime @default(now())
+
+  @@index([projectId])
+  @@index([tenantId])
+}
+
+model Issue {
+  id          String   @id @default(cuid())
+  projectId   String
+  title       String
+  category    String   @default("delivery")
+  priority    String   @default("medium") // critical|high|medium|low
+  status      String   @default("open") // open|in_progress|resolved|closed
+  ownerId     String?
+  description String?
+  createdAt   DateTime @default(now())
+
+  @@index([projectId])
+}
+
+model ChangeRequest {
+  id               String   @id @default(cuid())
+  projectId        String
+  title            String
+  type             String   @default("scope") // scope|schedule|cost|technical|regulatory
+  status           String   @default("submitted") // submitted|in_review|approved|rejected|implemented
+  scheduleImpactDays Int    @default(0)
+  costImpact       Float    @default(0)
+  riskImpact       String?
+  createdAt        DateTime @default(now())
+
+  @@index([projectId])
+}
+
+model Document {
+  id          String   @id @default(cuid())
+  tenantId    String
+  projectId   String?
+  entityType  String? // project|asset|risk|contract …
+  entityId    String?
+  name        String
+  type        String   @default("document")
+  revision    String   @default("A")
+  status      String   @default("draft") // draft|under_review|approved|superseded|archived
+  classification String @default("internal") // public|internal|confidential|restricted
+  storageUrl  String?
+  createdAt   DateTime @default(now())
+
+  @@index([tenantId])
+  @@index([projectId])
+}
+
+model ResourceProfile {
+  id             String   @id @default(cuid())
+  tenantId       String
+  userId         String?
+  name           String
+  role           String
+  department     String?
+  skills         String   @default("[]") // JSON
+  certifications String   @default("[]") // JSON
+  capacityHours  Int      @default(160)
+  allocatedHours Int      @default(0)
+  costRate       Float    @default(0)
+  visaExpiry     DateTime?
+  createdAt      DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+model Timesheet {
+  id            String   @id @default(cuid())
+  resourceId    String
+  projectId     String?
+  taskId        String?
+  date          DateTime
+  hours         Float    @default(0)
+  overtimeHours Float    @default(0)
+  status        String   @default("submitted") // draft|submitted|approved|rejected
+  approvedBy    String?
+
+  @@index([resourceId])
+}
+
+model CostAccount {
+  id             String  @id @default(cuid())
+  projectId      String
+  wbsElement     String
+  budget         Float   @default(0)
+  actual         Float   @default(0)
+  etc            Float   @default(0)
+  eac            Float   @default(0)
+  capexOpexSplit String  @default("opex") // capex|opex|mixed
+  glCode         String?
+
+  @@index([projectId])
+}
+
+model Asset {
+  id              String   @id @default(cuid())
+  tenantId        String
+  name            String
+  category        String   @default("equipment")
+  locationId      String?
+  conditionGrade  Int      @default(3) // 1–5
+  status          String   @default("active") // active|inactive|disposed
+  acquisitionCost Float    @default(0)
+  bookValue       Float    @default(0)
+  nextPmDate      DateTime?
+  createdAt       DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+model WorkOrder {
+  id            String   @id @default(cuid())
+  assetId       String
+  type          String   @default("preventive") // preventive|corrective|emergency|statutory
+  priority      String   @default("medium")
+  status        String   @default("open") // open|in_progress|complete|cancelled
+  assignedTo    String?
+  estimatedHours Float   @default(0)
+  actualHours   Float    @default(0)
+  partsCost     Float    @default(0)
+  createdAt     DateTime @default(now())
+
+  @@index([assetId])
+}
+
+model Vendor {
+  id               String   @id @default(cuid())
+  tenantId         String
+  legalName        String
+  category         String   @default("[]") // JSON
+  avlStatus        String   @default("approved") // approved|pending|suspended|removed
+  pqScore          Int      @default(0)
+  performanceScore Int      @default(0)
+  spendYtd         Float    @default(0)
+  riskRating       String   @default("low") // low|medium|high
+  createdAt        DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+model EsgDataPoint {
+  id                 String   @id @default(cuid())
+  tenantId           String
+  scope              String // scope1|scope2|scope3
+  category           String
+  activityData       Float    @default(0)
+  emissionFactorId   String?
+  calculatedEmissions Float   @default(0) // tCO2e
+  reportingPeriod    String // e.g. 2026-Q2
+  framework          String? // TCFD|CSRD|GRI|SASB|CDP
+  createdAt          DateTime @default(now())
+
+  @@index([tenantId])
+}
+
+model Sprint {
+  id        String   @id @default(cuid())
+  tenantId  String
+  name      String
+  status    String   @default("active") // planned|active|complete
+  startDate DateTime?
+  endDate   DateTime?
+  velocity  Int      @default(0)
+
+  @@index([tenantId])
+}
+
+model Story {
+  id                 String   @id @default(cuid())
+  tenantId           String
+  sprintId           String?
+  type               String   @default("story") // epic|feature|story|task
+  parentId           String?
+  title              String
+  status             String   @default("backlog") // backlog|todo|in_progress|in_review|done
+  storyPoints        Int      @default(0)
+  acceptanceCriteria String   @default("[]") // JSON
+  priorityScore      Float    @default(0)
+  createdAt          DateTime @default(now())
+
+  @@index([tenantId])
+  @@index([sprintId])
+}
+
+model TestCase {
+  id                  String   @id @default(cuid())
+  storyId             String
+  title               String
+  steps               String   @default("[]") // JSON
+  expectedResult      String?
+  status              String   @default("not_run") // not_run|pass|fail|blocked
+  lastExecutionResult String?
+
+  @@index([storyId])
+}
